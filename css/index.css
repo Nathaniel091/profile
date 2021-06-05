@@ -3,3 +3,98 @@
   margin: 0;
   padding: 0;
 }
+/*--------------------------------------------------------------
+# General Styling
+--------------------------------------------------------------*/
+body {
+  font-family: raleway;
+  /*font-family: montserat;*/
+  /*font-family: segeou ui;*/
+}
+
+a {}
+
+a:hover {}
+
+h1, h2, h3, h4, h5, h6 {}
+
+section{
+  padding: 40px;
+}
+
+@media (max-width: 500px) {
+  section{
+    padding: 40px 30px;
+  }
+}
+
+
+/*--------------------------------------------------------------
+ Header
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# banner
+--------------------------------------------------------------*/
+#banner{
+  background: #657786;
+}
+
+#banner .container-fluid{
+  height: 120px;
+}
+
+#banner .nav-toggle-cont .nav-toggle-icon {
+  width: 60px;
+  height: 25px;"
+}
+
+@media (max-width: 500px) {
+  #banner .container-fluid{
+    height: 180px;
+  }
+}
+@media (max-width: 400px) {
+  #banner .container-fluid{
+    height: 180px;
+  }
+  #banner .logo h4{
+    font-size: 1.1em;
+  }
+  #banner .logo p{
+    font-size: 0.8em;
+  }
+
+}
+@media (max-width: 350px) {
+  #banner .nav-toggle-cont .nav-toggle-icon {
+    width: 40px;
+    height: 30px;
+    margin-top: 10px !important;
+  }
+}
+
+
+
+
+
+/*--------------------------------------------------------------
+ Main
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# page-body
+--------------------------------------------------------------*/
+#page-body .profile .profile-picture{
+  background: #657786;
+  width: 210px;
+  height: 210px;
+  padding: 6px;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 10px;
+  margin-top: -150px;
+}
+
+
+
+
+
+
