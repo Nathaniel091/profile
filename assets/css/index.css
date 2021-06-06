@@ -22,6 +22,15 @@ section{
   padding: 40px;
 }
 
+.highlight-first-letter::first-letter{
+  color: #657786;
+  font-size: 2em;
+} 
+
+.indent{
+  text-indent: 30px;
+}
+
 @media (max-width: 500px) {
   section{
     padding: 40px 30px;
@@ -36,6 +45,7 @@ section{
 # banner
 --------------------------------------------------------------*/
 #banner{
+  /*padding-top: 40px;*/
   background: #657786;
 }
 
@@ -83,17 +93,45 @@ section{
 /*--------------------------------------------------------------
 # page-body
 --------------------------------------------------------------*/
+#page-body{
+  width: 70%;
+}
+
 #page-body .profile .profile-picture{
-  background: #657786;
-  width: 210px;
-  height: 210px;
+  background: #7C8B98;
+  width: 216px;
+  height: 216px;
   padding: 6px;
   border-radius: 50%;
   box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 10px;
   margin-top: -150px;
 }
 
+#page-body .social-links{
+  margin-top: 30px;
+  max-width: 400px;
+}
 
+#page-body .social-links a{
+  display: inline-flex;
+  width: 40px;
+  height: 40px;
+  color: #657786;
+  background: rgba(101, 119, 134, 0.2);
+  border-radius: 50%;
+  text-decoration: none;
+  border: 1px solid #657786;
+}
+
+#page-body .social-links a:hover{
+  background: rgba(101, 119, 134, 0.1);
+}
+
+#page-body .social-links a > i{
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: auto;
+}
 
 
 
