@@ -18,7 +18,7 @@ a:hover {}
 
 h1, h2, h3, h4, h5, h6 {}
 
-section{
+.section{
   margin-top: 50px;
 
   padding: 40px;
@@ -73,6 +73,8 @@ section{
 @media (max-width: 500px) {
   #banner .container-fluid{
     height: 180px;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 @media (max-width: 400px) {
@@ -117,7 +119,7 @@ section{
   padding: 6px;
   border-radius: 50%;
   box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 10px;
-  margin-top: -150px;
+  margin-top: -200px;
 }
 
 #page-body .profile .social-links{
@@ -153,7 +155,7 @@ section{
 
 /*send message*/
 #page-body .send-message{
-  margin-top: 40px;
+  margin-top: 50px;
 }
 
 #page-body .send-message button{
@@ -190,8 +192,8 @@ section{
  Footer
 --------------------------------------------------------------*/
 footer{
-  padding: 0;
-  margin: 0;
+  /*padding: 0;*/
+  /*margin: 0;*/
 }
 
 /*--------------------------------------------------------------
@@ -207,12 +209,12 @@ footer{
 
 #contact svg{}
 
-#contact .wrapper{
+#contact .contact-details-wrapper{
   background: #7C8B98;
-  padding-bottom: 40px;
+  padding-bottom: 150px;
 
   /*to cover the svg bottom border on mobile*/
-  margin-top: -1px;
+  margin-top: -2px;
 }
 
 #contact .contact-details > div{}
@@ -231,12 +233,18 @@ footer{
   margin: auto;
 }
 
-/*--------------------------------------------------------------
-# foot-note
---------------------------------------------------------------*/
-#foot-note{
+.foot-note{
   background: #657786;
 }
+
+.foot-note .copyright{
+  height: 50px;
+  padding-top: 15px;
+}
+.foot-note p{
+  font-size: 0.8em;
+}
+
 
 
 
