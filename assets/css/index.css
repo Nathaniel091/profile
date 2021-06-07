@@ -19,7 +19,10 @@ a:hover {}
 h1, h2, h3, h4, h5, h6 {}
 
 section{
+  margin-top: 50px;
+
   padding: 40px;
+  padding-bottom: 0px;  
 }
 
 .highlight-first-letter::first-letter{
@@ -33,7 +36,10 @@ section{
 
 @media (max-width: 500px) {
   section{
+    margin-top: 50px;
+
     padding: 40px 30px;
+    padding-bottom: 0px;
   }
 }
 
@@ -45,6 +51,7 @@ section{
 # banner
 --------------------------------------------------------------*/
 #banner{
+  margin-top: 0px;
   /*padding-top: 40px;*/
   background: #657786;
 }
@@ -120,8 +127,8 @@ section{
 
 #page-body .social-links a{
   display: inline-flex;
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
   color: #657786;
   background: rgba(101, 119, 134, 0.2);
   border-radius: 50%;
@@ -177,5 +184,62 @@ section{
     width: initial;
   }
 }
+
+
+/*--------------------------------------------------------------
+ Footer
+--------------------------------------------------------------*/
+footer{
+  padding: 0;
+  margin: 0;
+}
+
+/*--------------------------------------------------------------
+# contact-details
+--------------------------------------------------------------*/
+#contact{
+  padding-top: 0;
+  padding-left: 0;
+  padding-right: 0;
+  /*padding-bottom: 0;*/
+  /*padding: 0;*/
+}
+
+#contact svg{}
+
+#contact .wrapper{
+  background: #7C8B98;
+  padding-bottom: 40px;
+
+  /*to cover the svg bottom border on mobile*/
+  margin-top: -1px;
+}
+
+#contact .contact-details > div{}
+
+#contact .contact-details .phone span,
+#contact .contact-details .e-mail span{
+  width: 45px;
+  height: 45px;
+  background: #657786;
+  border-radius: 50%;
+}
+
+#contact .contact-details .phone span i,
+#contact .contact-details .e-mail span i{
+  font-size: 1.2em;
+  margin: auto;
+}
+
+/*--------------------------------------------------------------
+# foot-note
+--------------------------------------------------------------*/
+#foot-note{
+  background: #657786;
+}
+
+
+
+
 
 
