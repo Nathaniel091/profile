@@ -28,7 +28,7 @@
 	
 	<!-- google fonts -->
 	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link rel="preload" as="font" href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
 </head>
 
 <body id="" class="">
@@ -104,11 +104,57 @@
 			     </div>
 			     <!-- End .bio -->
 
-			     <!-- send message -->
-			     <div class="send-message">
-			          <button class="d-block mx-auto text-center">Send a message!</button>
+			     <!-- send-button-and-form -->
+			     <div class="send-button-and-form">
+			     	<!-- form-toggle-btn -->
+			          <button id="form-toggle-btn" class="d-block mx-auto text-center">Send a message!</button>
+
+			          <div class="form-container d-none">
+			          	<div class="py-5 px-5">
+			          		<form action="" id="" class="mx-auto bg-white py-5 px-4">
+			          			<!-- close button -->
+			          			<button id="close-btn" class="close-btn"><i class="fas fa-times"></i></button>
+
+			          			<!-- Get in touch -->
+			          			<h4 class="mb-4" style="opacity: 0.2;">Get in touch</h4>
+
+			          			<!-- name-and-email -->
+								<div class="name-and-email d-flex justify-content-between">
+									<div class="mb-3 w-100 mr-2">
+										<label for="exampleInputEmail1" class="form-label">Your Name</label>
+										<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+									</div>
+
+									<div class="mb-3 w-100 ml-2">
+										<label for="exampleInputEmail1" class="form-label">Your Email</label>
+										<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+									</div>
+								</div>
+
+								<!-- subject -->
+								<div class="mb-3">
+									<label for="exampleInputEmail1" class="form-label">Subject</label>
+									<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+								</div>
+
+								<!-- message -->
+								<div class="mb-3">
+									<label for="exampleInputPassword1" class="form-label">Message</label>
+									<textarea class="form-control" name="message" rows="10" data-rule="required" data-msg="Please write something for us"></textarea>
+								</div>
+
+								<!-- checkbox -->
+								<!-- <div class="mb-3 form-check">
+									<input type="checkbox" class="form-check-input" id="exampleCheck1">
+									<label class="form-check-label" for="exampleCheck1">Check me out</label>
+								</div> -->
+
+								<button type="submit" class="d-block mx-auto mt-5">Send message</button>
+							</form>
+			          	</div>
+			     	</div>
 			     </div>
-			     <!-- End .send message -->
+			     <!-- End .send-button-and-form -->
 			</div>
 		</section>
 		<!-- End page-body section-->
