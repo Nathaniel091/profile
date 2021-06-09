@@ -7,9 +7,8 @@
 # General Styling
 --------------------------------------------------------------*/
 body {
-  /*font-family: raleway;*/
-  /*font-family: montserat;*/
-  /*font-family: segeou ui;*/
+
+  /*font-family: Segoe UI', sans-serif;*/
 }
 
 a {}
@@ -127,8 +126,8 @@ h1, h2, h3, h4, h5, h6 {}
 
 #page-body .social-links a{
   display: inline-flex;
-  width: 45px;
-  height: 45px;
+  width: 50px;
+  height: 50px;
   color: #657786;
   background: rgba(101, 119, 134, 0.2);
   border-radius: 50%;
@@ -141,7 +140,7 @@ h1, h2, h3, h4, h5, h6 {}
 }
 
 #page-body .social-links a > i{
-  font-size: 1.2em;
+  font-size: 1.4em;
   font-weight: bold;
   margin: auto;
 }
@@ -184,25 +183,33 @@ h1, h2, h3, h4, h5, h6 {}
 
 }
 
-/*.form-container > div{
-  background: rgba(101, 119, 134, 0.9);
+.form-container > div{
+  /*background: rgba(101, 119, 134, 0.9);*/
+  background-color: white;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  width: 100%;
+  /*width: 100%;*/
+  width: 0%;
   height: 100%;
   overflow-y: scroll;
+
+/*  -webkit-transition: background 1s;  Safari 
+  transition: background 1s;*/
+
+  -webkit-transition: 1s; /* Safari */
+  transition: 1s;
 }
-*/
-/*.form-container > div form{
+
+.form-container > div form{
   position: relative;
   width: 500px !important;
   border-radius: 10px;
-}*/
+}
 
-/*.form-container > div form #close-btn{
+.form-container > div form #close-btn{
   position: absolute;
   top: -25px;
   right: -25px;
@@ -212,12 +219,12 @@ h1, h2, h3, h4, h5, h6 {}
   background: rgba(101, 119, 134, 1);
 
   border-radius: 50%;
-  border: 1px solid white;
-}*/
+  border: 1px solid white !important;
+}
 
-/*.form-container > div form #close-btn:hover{
+.form-container > div form #close-btn:hover{
   background: rgba(0, 0, 0, 0.9);
-}*/
+}
 
 @media (max-width: 900px) {
   #page-body > div{
@@ -242,6 +249,22 @@ h1, h2, h3, h4, h5, h6 {}
   .form-container > div{
     padding-left: 30px !important;
     padding-right: 30px !important;
+  }
+}
+
+@media (max-width: 450px) {
+  /*form*/
+  .form-container > div{
+    padding-left: 25px !important;
+    padding-right: 25px !important;
+  }
+}
+
+@media (max-width: 320px) {
+  /*form*/
+  .form-container > div{
+    padding-left: 10px !important;
+    padding-right: 10px !important;
   }
 }
 
