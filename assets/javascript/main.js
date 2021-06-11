@@ -15,22 +15,13 @@ formCloseBtn.addEventListener('click', function(event){
 
 // function 'launchSendMessageForm'
 function launchSendMessageForm() {
-	/*background: rgba(101, 119, 134, 0.9);*/
 	formContainer.classList.remove('d-none');
-	const formWrapper = document.querySelector("#form-container div");
-	// formWrapper.style.backgroundColor = 'transparent';
-	formWrapper.style.backgroundColor = 'rgba(101, 119, 134, 0.9)';
-	formWrapper.style.width = '100%';
-	// console.log(formWrapper)
 }
 
 // function 'closeSendMessageForm'
 function closeSendMessageForm() {
 	formContainer.classList.add('d-none');
 }
-
-// console.log(openSendMessageForm())
-// console.log(formToggleBtn)
 
 
 
