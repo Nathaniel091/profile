@@ -178,9 +178,16 @@ h1, h2, h3, h4, h5, h6 {}
   color: transparent;
 }
 
-/*form*/
-.form-container{
+/*================================================================*/
+/*================================================================*/
+/*ORIGINAL - still under construction*/
 
+/*form*/
+.form-container {
+  width: 100%;
+  padding: 30px;
+  background: #fff;
+  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
 }
 
 .form-container > div{
@@ -199,13 +206,13 @@ h1, h2, h3, h4, h5, h6 {}
 /*  -webkit-transition: background 1s;  Safari 
   transition: background 1s;*/
 
-  -webkit-transition: 1s; /* Safari */
-  transition: 1s;
+  /*-webkit-transition: 1s;*/ /* Safari */
+  /*transition: 1s;*/
 }
 
 .form-container > div form{
   position: relative;
-  width: 500px !important;
+  background: white;
   border-radius: 10px;
 }
 
@@ -216,7 +223,6 @@ h1, h2, h3, h4, h5, h6 {}
   width: 50px;
   height:  50px;
   font-size: 1.5em;
-  background: rgba(101, 119, 134, 1);
 
   border-radius: 50%;
   border: 1px solid white !important;
@@ -226,45 +232,105 @@ h1, h2, h3, h4, h5, h6 {}
   background: rgba(0, 0, 0, 0.9);
 }
 
+.form-container .form-group {
+  padding-bottom: 8px;
+}
+
+.form-container .validate {
+  display: none;
+  color: red;
+  margin: 0 0 15px 0;
+  font-weight: 400;
+  font-size: 13px;
+}
+
+.form-container .error-message {
+  display: none;
+  color: #fff;
+  background: #ed3c0d;
+  text-align: left;
+  padding: 15px;
+  font-weight: 600;
+}
+
+.form-container .error-message br + br {
+  margin-top: 25px;
+}
+
+.form-container .sent-message {
+  display: none;
+  color: #fff;
+  background: #18d26e;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
+}
+
+.form-container .loading {
+  display: none;
+  background: #fff;
+  text-align: center;
+  padding: 15px;
+}
+
+.form-container .loading:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid #18d26e;
+  border-top-color: #eee;
+  -webkit-animation: animate-loading 1s linear infinite;
+  animation: animate-loading 1s linear infinite;
+}
+
+.form-container input, 
+.form-container textarea {}
+
+.form-container input {
+  height: 44px;
+}
+
+.form-container textarea {
+  padding: 10px 12px;
+}
+
+.form-container button[type="submit"] {
+  background: #149ddd;
+  border: 0;
+  padding: 10px 24px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 4px;
+}
+
+.form-container button[type="submit"]:hover {
+  background: #37b3ed;
+}
+
+@-webkit-keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 @media (max-width: 900px) {
   #page-body > div{
     width: initial;
-  }
-
-  /*form*/
-  .form-container > div form{
-    width: 35%;
-  }
-}
-
-@media (max-width: 600px) {
-  /*form*/
-  .form-container > div form{
-    width: 100% !important;
-  }
-}
-
-@media (max-width: 500px) {
-  /*form*/
-  .form-container > div{
-    padding-left: 30px !important;
-    padding-right: 30px !important;
-  }
-}
-
-@media (max-width: 450px) {
-  /*form*/
-  .form-container > div{
-    padding-left: 25px !important;
-    padding-right: 25px !important;
-  }
-}
-
-@media (max-width: 320px) {
-  /*form*/
-  .form-container > div{
-    padding-left: 10px !important;
-    padding-right: 10px !important;
   }
 }
 
@@ -272,8 +338,7 @@ h1, h2, h3, h4, h5, h6 {}
  Footer
 --------------------------------------------------------------*/
 footer{
-  /*padding: 0;*/
-  /*margin: 0;*/
+
 }
 
 /*--------------------------------------------------------------
