@@ -76,14 +76,16 @@
 
 	                   	// if status is between A % B "say dont worry, not your fault"
 	                   	// online.status >= 200 && online.status < 300;
-
-	                  	
-                   		notificationText.innerHTML = `<span class="text-warning"><i class="fas fa-exclamation-triangle"></i> Failed to send.</span> <span class="text-dark">Don't worry, its not your fault!</span> `;
-	                   	openNotificationBox();
+	                   	
+	                   	if(navigator.onLine) {
+	                   		notificationText.innerHTML = `<span class="text-warning"><i class="fas fa-exclamation-triangle"></i> Failed to send.</span> <span class="text-dark">Don't worry, its not your fault!</span> `;
+		                   	openNotificationBox();
+		                   	sendButton.textContent = "Send";
+	                   	} else {
+	                   		notificationText.innerHTML = `<span class="text-warning"><i class="fas fa-exclamation-triangle"></i> Network error.</span> <span class="text-dark">Please check your connection.</span>`;
+	                   		openNotificationBox();
+	                   	}
 	                   	sendButton.textContent = "Send";
-
-	                   // notificationText.innerHTML = `<span class="text-warning"><i class="fas fa-exclamation-triangle"></i> ${networkErrorMessage}</span>. Please check your connection.`;
-
 	               });
 	               // nathanielsamuel091@gmail.com
             });

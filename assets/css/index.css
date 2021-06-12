@@ -69,7 +69,7 @@ header {
   border-radius: 5px;
   background-color: rgba(235, 235, 235, 1);
   color: rgba(0, 210, 0, 1);
-  /*font-size: 1.1em;*/
+  font-size: 1.1em;
   z-index: 1000 !important;
   
   -webkit-transition: top 2s;
@@ -88,7 +88,7 @@ header {
   width: 45px;
   height:  45px;
   font-size: 1.3em;
-  background-color: rgba(100, 100, 100, 1);
+  background-color: rgba(150, 150, 150, 1);
   color: white;
   border-radius: 50%;
   border: 1px solid black;
