@@ -286,6 +286,32 @@ h1, h2, h3, h4, h5, h6 {}
   height: 44px;
 }
 
+/*input placeholder*/
+.form-container input::-webkit-input-placeholder{
+  font-size: 0.8em;
+  opacity: 0.8;
+}
+.form-container input::-moz-placeholder{
+  font-size: 0.8em;
+  opacity: 0.8;
+}
+.form-container input:-moz-placeholder{
+  font-size: 0.8em;
+  opacity: 0.8;
+}
+.form-container input::-ms-input-placeholder{
+  font-size: 0.8em;
+  opacity: 0.8;
+}
+.form-container input:-ms-input-placeholder{
+  font-size: 0.8em;
+  opacity: 0.8; 
+}
+.form-container input::placeholder {
+  font-size: 0.8em;
+  opacity: 0.8;
+}
+
 .form-container textarea {
   padding: 10px 12px;
 }
