@@ -46,6 +46,56 @@ h1, h2, h3, h4, h5, h6 {}
 /*--------------------------------------------------------------
  Header
 --------------------------------------------------------------*/
+header {
+  /*position: relative;*/
+  /*z-index: -1;*/
+}
+/*--------------------------------------------------------------
+# notification-box
+--------------------------------------------------------------*/
+.notification-box{
+  position: fixed;
+  top: 0px;
+  left: 50%; 
+  -webkit-transform: translate(-50%, -50%);
+     -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+       -o-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+
+  /*max-width: 500px;*/
+  /*padding: 5px 150px; */
+  height: 60px;
+  width: 60%;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: white;
+  color: rgba(0, 210, 0, 1);
+  /*font-size: 1.1em;*/
+  z-index: 1000 !important;
+  
+  -webkit-transition: top 2s;
+  transition: top 2s;
+}
+
+.notification-box > div{
+  position: relative;
+  padding-top: 13px;
+}
+
+.notification-box .close-btn{
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  width: 45px;
+  height:  45px;
+  font-size: 1.3em;
+  color: #657786;
+  border-radius: 50%;
+  border: 1px solid black;
+  outline: none;
+}
+
 /*--------------------------------------------------------------
 # banner
 --------------------------------------------------------------*/
@@ -67,6 +117,12 @@ h1, h2, h3, h4, h5, h6 {}
 #banner .nav-toggle-cont .nav-toggle-icon {
   width: 60px;
   height: 25px;"
+}
+
+@media (max-width: 767px) {
+  .notification-box{
+    width: 90%;
+  }
 }
 
 @media (max-width: 500px) {
@@ -109,6 +165,10 @@ h1, h2, h3, h4, h5, h6 {}
 }
 
 /*profile*/
+/*#page-body .profile .profile-picture{*/
+  /*z-index: 1000 !important;*/
+/*}*/
+
 #page-body .profile .profile-picture{
   background: #7C8B98;
   width: 216px;
@@ -288,27 +348,27 @@ h1, h2, h3, h4, h5, h6 {}
 
 /*input placeholder*/
 .form-container input::-webkit-input-placeholder{
-  font-size: 0.8em;
+  font-size: 0.81em;
   opacity: 0.8;
 }
 .form-container input::-moz-placeholder{
-  font-size: 0.8em;
+  font-size: 0.81em;
   opacity: 0.8;
 }
 .form-container input:-moz-placeholder{
-  font-size: 0.8em;
+  font-size: 0.81em;
   opacity: 0.8;
 }
 .form-container input::-ms-input-placeholder{
-  font-size: 0.8em;
+  font-size: 0.81em;
   opacity: 0.8;
 }
 .form-container input:-ms-input-placeholder{
-  font-size: 0.8em;
+  font-size: 0.81em;
   opacity: 0.8; 
 }
 .form-container input::placeholder {
-  font-size: 0.8em;
+  font-size: 0.81em;
   opacity: 0.8;
 }
 

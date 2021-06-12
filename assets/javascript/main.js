@@ -1,4 +1,29 @@
+/*--------------------------------------------------------------
+# notification-box
+--------------------------------------------------------------*/
+const notificationBox = document.querySelector(".notification-box")
+const notificationCloseBtn = document.querySelector(".notification-box .close-btn")
 
+notificationCloseBtn.addEventListener('click', closeNotificationBox);
+
+// function 'openNotificationBox'
+function openNotificationBox() {
+	notificationBox.style.top = '60px';
+	notificationBox.classList.remove('d-none');
+	// setTimeout(closeNotificationBox, 3000);
+}
+
+// function 'closeNotificationBox'
+function closeNotificationBox() {
+	notificationBox.classList.add('d-none');
+}
+
+// openNotificationBox()
+
+
+/*--------------------------------------------------------------
+# form
+--------------------------------------------------------------*/
 const formContainer = document.querySelector("#form-container");
 
 const formToggleBtn = document.querySelector("#form-toggle-btn");

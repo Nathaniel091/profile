@@ -43,25 +43,42 @@
         (function() {
             // https://dashboard.emailjs.com/admin/integration
             // emailjs.init('YOUR_USER_ID');
-            emailjs.init('user_vkx7EkyTvkokAMcaWTEsG');
+            // emailjs.init('user_vkx7EkyTvkokAMcaWTEsG');
+            emailjs.init('ser_vkx7EkyTvkokAMcaWTEsG');
         })();
     </script>
     <script type="text/javascript">
         window.onload = function() {
             document.getElementById('contact-form').addEventListener('submit', function(event) {
-                event.preventDefault();
-                // generate a five digit number for the contact_number variable
-                this.contact_number.value = Math.random() * 100000 | 0;
-                // these IDs from the previous steps
-                emailjs.sendForm('email_service', 'template_contact_form', this)
-                    .then(function() {
-                        console.log('SUCCESS!');
-                    }, function(error) {
-                        console.log('FAILED...', error);
-                    });
+	          event.preventDefault();
+
+	          let sendButton = document.getElementById('send-button');
+	          sendButton.textContent = "Sending...";
+	          // generate a five digit number for the contact_number variable
+	          this.contact_number.value = Math.random() * 100000 | 0;
+
+	          // notification - text
+	          let notificationText = document.querySelector('.notification-text');
+
+	          // these IDs from the previous steps
+	          emailjs.sendForm('email_service', 'template_contact_form', this)
+	               .then(function() {
+	                   console.log('SUCCESS!');
+	                   notificationText.innerHTML = `Sent <i class="far fa-check-circle"></i>`;
+	                   openNotificationBox();
+
+	                   sendButton.textContent = "Send";
+	               }, function(error) {
+	                   console.log('FAILED...', error);
+	                   notificationText.innerHTML = `<span class="text-warning"><i class="fas fa-exclamation-triangle"></i> Failed to send.</span> <span class="text-dark">Don't worry, its not your fault!</span> `;
+	                   openNotificationBox();
+	                   sendButton.textContent = "Send";
+	               });
+	               // nathanielsamuel091@gmail.com
             });
         }
     </script>
+
 	<!-- TESTING EMAILJS========================================= -->
 </head>
 
@@ -70,9 +87,10 @@
 	<!-- header -->
 	<header id="" class="">
 		<!-- notification box -->
-		<div id="" class="notification-box">
+		<div id="notification-box" class="notification-box mx-auto d-none">
 			<div class="">
-				
+				<button class=" close-btn"><i class="fas fa-times"></i></button>
+				<p class="notification-text text-center">notification box</p>
 			</div>
 		</div>
 
@@ -150,18 +168,18 @@
 							<div id="wrapper"  class="wrapper col-lg-7 mx-auto d-flex align-items-stretch">
 
 
-<!-- TESTING EMAILJS========================================= -->
-	<!-- <form id="contact-form">
-        <input type="hidden" name="contact_number">
-        <label>Name</label>
-        <input type="text" name="user_name">
-        <label>Email</label>
-        <input type="email" name="user_email">
-        <label>Message</label>
-        <textarea name="message"></textarea>
-        <input type="submit" value="Send">
-    </form> -->
-	<!-- TESTING EMAILJS========================================= -->
+						<!-- TESTING EMAILJS========================================= -->
+							<!-- <form id="contact-form">
+						        <input type="hidden" name="contact_number">
+						        <label>Name</label>
+						        <input type="text" name="user_name">
+						        <label>Email</label>
+						        <input type="email" name="user_email">
+						        <label>Message</label>
+						        <textarea name="message"></textarea>
+						        <input type="submit" value="Send">
+						    </form> -->
+							<!-- TESTING EMAILJS========================================= -->
 
 								<form id="contact-form" class="contact-form py-5 px-4 mx-auto">
 								<!-- <form action="forms/contact.php" method="post" role="form" id="contact-form" class="php-email-form py-5 px-4 mx-auto"> -->
@@ -205,7 +223,7 @@
 									<!-- message box -->
 									<div class="form-group">
 										<label for="name">Message</label>
-										<textarea class="form-control" name="message" rows="10" data-rule="required" data-msg="Please write something for us"></textarea>
+										<textarea class="form-control" name="message" rows="10" data-rule="required" placeholder="Hello..." data-msg="Please write something for us"></textarea>
 										<div class="validate"></div>
 									</div>
 
@@ -218,7 +236,7 @@
 
 									<!-- send button -->
 									<div class="text-center">
-										<button class="mt-4" type="submit">Send</button>
+										<button id="send-button" class="mt-4" type="submit">Send</button>
 									</div>
 								</form>
 							</div>
