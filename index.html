@@ -43,8 +43,8 @@
         (function() {
             // https://dashboard.emailjs.com/admin/integration
             // emailjs.init('YOUR_USER_ID');
-            // emailjs.init('user_vkx7EkyTvkokAMcaWTEsG');
-            emailjs.init('ser_vkx7EkyTvkokAMcaWTEsG');
+            emailjs.init('user_vkx7EkyTvkokAMcaWTEsG');
+            // emailjs.init('ser_vkx7EkyTvkokAMcaWTEsG');
         })();
     </script>
     <script type="text/javascript">
@@ -62,17 +62,28 @@
 
 	          // these IDs from the previous steps
 	          emailjs.sendForm('email_service', 'template_contact_form', this)
-	               .then(function() {
-	                   console.log('SUCCESS!');
-	                   notificationText.innerHTML = `Sent <i class="far fa-check-circle"></i>`;
-	                   openNotificationBox();
+	               .then(function(response) {
+	                   	console.log('SUCCESS!');
+	                   	console.log(response);
 
-	                   sendButton.textContent = "Send";
+	                    notificationText.innerHTML = `Sent <i class="far fa-check-circle"></i>`;
+	                    openNotificationBox();
+
+	                    sendButton.textContent = "Send";
+
 	               }, function(error) {
-	                   console.log('FAILED...', error);
-	                   notificationText.innerHTML = `<span class="text-warning"><i class="fas fa-exclamation-triangle"></i> Failed to send.</span> <span class="text-dark">Don't worry, its not your fault!</span> `;
-	                   openNotificationBox();
-	                   sendButton.textContent = "Send";
+	                   	console.log('FAILED...', error);
+
+	                   	// if status is between A % B "say dont worry, not your fault"
+	                   	// online.status >= 200 && online.status < 300;
+
+	                  	
+                   		notificationText.innerHTML = `<span class="text-warning"><i class="fas fa-exclamation-triangle"></i> Failed to send.</span> <span class="text-dark">Don't worry, its not your fault!</span> `;
+	                   	openNotificationBox();
+	                   	sendButton.textContent = "Send";
+
+	                   // notificationText.innerHTML = `<span class="text-warning"><i class="fas fa-exclamation-triangle"></i> ${networkErrorMessage}</span>. Please check your connection.`;
+
 	               });
 	               // nathanielsamuel091@gmail.com
             });
@@ -90,7 +101,7 @@
 		<div id="notification-box" class="notification-box mx-auto d-none">
 			<div class="">
 				<button class=" close-btn"><i class="fas fa-times"></i></button>
-				<p class="notification-text text-center">notification box</p>
+				<p class="notification-text text-center">notification box!</p>
 			</div>
 		</div>
 
