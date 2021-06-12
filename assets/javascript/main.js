@@ -10,7 +10,7 @@ notificationCloseBtn.addEventListener('click', closeNotificationBox);
 function openNotificationBox() {
 	notificationBox.style.top = '60px';
 	notificationBox.classList.remove('d-none');
-	setTimeout(closeNotificationBox, 3000);
+	// setTimeout(closeNotificationBox, 3000);
 }
 
 // function 'closeNotificationBox'
