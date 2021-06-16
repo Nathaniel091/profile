@@ -55,7 +55,7 @@ header {
 --------------------------------------------------------------*/
 .notification-box{
   position: fixed;
-  top: 0px;
+  top: 50px;
   left: 50%; 
   -webkit-transform: translate(-50%, -50%);
      -moz-transform: translate(-50%, -50%);
@@ -64,12 +64,12 @@ header {
           transform: translate(-50%, -50%);
 
   min-height: 60px;
-  width: 60%;
+  min-width: 250px;
   border: 1px solid black;
   border-radius: 5px;
   background-color: rgba(235, 235, 235, 1);
   color: rgba(0, 210, 0, 1);
-  font-size: 1.1em;
+  /*font-size: 1.1em;*/
   z-index: 1000 !important;
   
   -webkit-transition: top 2s;
@@ -85,15 +85,21 @@ header {
   position: absolute;
   top: -15px;
   right: -15px;
-  width: 45px;
-  height:  45px;
-  font-size: 1.3em;
-  background-color: rgba(150, 150, 150, 1);
+  width: 35px;
+  height:  35px;
+  font-size: 1.1em;
+  background-color: #7c8b98;
   color: white;
   border-radius: 50%;
   border: 1px solid black;
   outline: none;
 }
+
+.notification-box .notification-text{
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
 
 /*--------------------------------------------------------------
 # banner

@@ -5,28 +5,31 @@
 const notificationBox = document.querySelector(".notification-box")
 const notificationCloseBtn = document.querySelector(".notification-box .close-btn")
 const notificationText = document.querySelector('.notification-box .notification-text');
-let notificationBoxTiming = 5000;
+
+
 
 
 
 /*--------------------------------------------------------------
-# notification-box (open & close) function
+# notification-box (open & close)
 --------------------------------------------------------------*/
-notificationCloseBtn.addEventListener('click', closeNotificationBox);
 
-// function 'openNotificationBox'
-function openNotificationBox() {
-	notificationBox.style.top = '60px';
-	notificationBox.classList.remove('d-none');
-	setTimeout(closeNotificationBox, notificationBoxTiming);
-}
+const notification = {
+	timeOut: 5000,
+	open : function() {
+		notificationBox.classList.remove('d-none');
+		setTimeout(this.close, this.timeOut);
+	},
+	close : function() {
+		notificationBox.classList.add('d-none');
+	},
+};
 
-// function 'closeNotificationBox'
-function closeNotificationBox() {
-	notificationBox.classList.add('d-none');
-}
+notificationCloseBtn.addEventListener('click', notification.close);
 
-// openNotificationBox()
+
+// notification.open()
+
 
 /*--------------------------------------------------------------
 # on click whatappLink
@@ -36,43 +39,35 @@ whatappLink.addEventListener('click', function(event){
 	event.preventDefault();
 
 	notificationText.innerHTML = `
-		<span id="copy-whatsapp-number" class="d-inline-block text-white small py-2 px-4 rounded" style=" background-color: #657786;">
+		<span id="copy-whatsapp-number" class="d-inline-block text-white small py-2 px-4 rounded" style=" background-color: #657786; cursor: pointer;">
 			<strong>Copy whatsapp no:</strong> +2347063978973
 		</span>
 		<br>
 		<br>
-		<span class="d-inline-block text-white small py-2 px-4 rounded" style="background-color: #657786;" onclick="">
-			<a class="whatsapp" href="https://wa.me/+2347063978973?text=Hello, am Nathaniel Samuel. Welcome to WhatsApp. How may I help you?" target="_blank" style="color: inherit;">visit whatsapp</a>
+		<span class="d-inline-block text-white small py-2 px-4 rounded" style="background-color: #657786; cursor: pointer;">
+			<a class="whatsapp" href="https://wa.me/+2347063978973?text=Hello, am Nathaniel Samuel. Welcome to WhatsApp. How may I help you?" target="_blank" style="color: inherit;">Open WhatsApp</a>
 		</span>
 	`;
 
+	notification.open();
+
 	// setting close time to 10s
-	notificationBoxTiming = 10000;
-	setTimeout(closeNotificationBox, notificationBoxTiming);
+	// notification.timeOut = 10000;
+	setTimeout(notification.close, notification.timeOut);
 
 	// onclick #copy-whatsapp-number, copy whatsapp number
 	let copyWhatsappNumber = document.querySelector("#copy-whatsapp-number")
 	copyWhatsappNumber.addEventListener('click', copyToClipboard);
-	openNotificationBox();
 	
 	
 	function copyToClipboard(){
-		// // close previous notification-box
-		// closeNotificationBox()
-
-		// // notification - text
-		// notificationText.innerHTML = `copied`;
-
-		// notificationBoxTiming = 200;
-		// setTimeout(openNotificationBox, notificationBoxTiming);
-		// notificationBoxTiming = 3000;
-		// setTimeout(closeNotificationBox, notificationBoxTiming);
-
 		let input = this.appendChild(document.createElement("input"));
 
 		copy('+2347063978973')
 		function copy(text) {
-			// let input = document.body.appendChild(document.createElement("input"));
+			// close previous box
+			// notification.close();
+
 			input.value = text;
 			input.focus();
 			input.select();
@@ -83,10 +78,13 @@ whatappLink.addEventListener('click', function(event){
 			// // notification - text
 			notificationText.innerHTML = `copied`;
 
-			notificationBoxTiming = 200;
-			setTimeout(openNotificationBox, notificationBoxTiming);
-			notificationBoxTiming = 3000;
-			setTimeout(closeNotificationBox, notificationBoxTiming);
+			// open again after 4milisecs
+			// notification.timeOut = 400;
+			// setTimeout(notification.open, notification.timeOut);
+
+			// close after 3s
+			// notification.timeOut = 3000;
+			// setTimeout(notification.close, notification.timeOut);
 		}
 	};
 
@@ -103,8 +101,10 @@ websiteLink.addEventListener('click', function(event){
 	// notification - text
 	notificationText.innerHTML = `Coming soon! <span class="text-dark">Website still under construction.</span>`;
 
-	setTimeout(closeNotificationBox, notificationBoxTiming);
-	openNotificationBox();
+	notification.open();
+
+	// notification.timeOut = 10000;
+	// setTimeout(notification.close, notification.timeOut);
 });
 
 
