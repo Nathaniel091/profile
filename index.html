@@ -46,49 +46,63 @@
         })();
     </script>
     <script type="text/javascript">
-        window.onload = function() {
-            document.getElementById('contact-form').addEventListener('submit', function(event) {
-	          event.preventDefault();
+	     window.onload = function() {
 
-	          let sendButton = document.getElementById('send-button');
-	          sendButton.textContent = "Sending...";
-	          // generate a five digit number for the contact_number variable
-	          this.contact_number.value = Math.random() * 100000 | 0;
+			// if(true){
+			if(validateForm()){
+				// phpEmailFormValidate() is gotten from validate.js in the php-email-form folder
+	            	document.getElementById('contact-form').addEventListener('submit', function(event) {
+			          event.preventDefault();
 
-	          // notification - text
-	          let notificationText = document.querySelector('.notification-text');
 
-	          // these IDs from the previous steps
-	          emailjs.sendForm('email_service', 'template_contact_form', this)
-	               .then(function(response) {
-	                   	console.log('SUCCESS!');
-	                   	console.log(response);
+			          let sendButton = document.getElementById('send-button');
+			          sendButton.textContent = "Sending...";
+			          // generate a five digit number for the contact_number variable
+			          this.contact_number.value = Math.random() * 100000 | 0;
 
-	                    notificationText.innerHTML = `Sent <i class="far fa-check-circle"></i>`;
-	                    openNotificationBox();
+			          // notification - text
+			          let notificationText = document.querySelector('.notification-text');
 
-	                    sendButton.textContent = "Send";
+			          // these IDs from the previous steps
+			          emailjs.sendForm('email_service', 'template_contact_form', this)
+		               .then(function(response) {
+		                   	console.log('SUCCESS!');
+		                   	console.log(response);
 
-	               }, function(error) {
-	                   	console.log('FAILED...', error);
+		                    notificationText.innerHTML = `Sent <i class="far fa-check-circle"></i>`;
+		                    notification.open();
 
-	                   	// if status is between A % B "say dont worry, not your fault"
-	                   	// online.status >= 200 && online.status < 300;
-	                   	
-	                   	if(navigator.onLine) {
-	                   		// if user is online _ "the error its not their fault"
-	                   		notificationText.innerHTML = `<span class="text-warning"><i class="fas fa-exclamation-triangle"></i> Failed to send.</span> <span class="text-dark">Don't worry, its not your fault!</span> `;
-		                   	openNotificationBox();
+		                    sendButton.textContent = "Send";
+
+		               }, function(error) {
+		                   	console.log('FAILED...', error);
+
+		                   	// if status is between A % B "say dont worry, not your fault"
+		                   	// online.status >= 200 && online.status < 300;
+		                   	
+		                   	if(navigator.onLine) {
+		                   		// if user is online _ "the error its not their fault"
+		                   		notificationText.innerHTML = `<span class="text-warning"><i class="fas fa-exclamation-triangle"></i> Failed to send.</span> <span class="text-dark">Don't worry, its not your fault!</span> `;
+			                   	notification.open();
+			                   	sendButton.textContent = "Send";
+		                   	} else {
+		                   		notificationText.innerHTML = `<span class="text-warning"><i class="fas fa-exclamation-triangle"></i> Network error.</span> <span class="text-dark">Please check your connection.</span>`;
+		                   		notification.open();
+		                   	}
 		                   	sendButton.textContent = "Send";
-	                   	} else {
-	                   		notificationText.innerHTML = `<span class="text-warning"><i class="fas fa-exclamation-triangle"></i> Network error.</span> <span class="text-dark">Please check your connection.</span>`;
-	                   		openNotificationBox();
-	                   	}
-	                   	sendButton.textContent = "Send";
-	               });
-	               // nathanielsamuel091@gmail.com
-            });
-        }
+		               });            
+	   			
+	   			});
+			} else {
+				document.getElementById('contact-form').addEventListener('submit', function(event) {
+			          event.preventDefault();
+
+					notificationText.innerHTML = `<span class="text-danger"><i class="fas fa-exclamation-triangle"></i> Fill out the required fields</span>`;
+			     	notification.open();
+			     });
+			}
+	     }
+
     </script>
 
 	<!-- TESTING EMAILJS========================================= -->
@@ -137,8 +151,8 @@
 				<div class="profile">
 					<!-- profile-picture -->
 					<div id="" class="profile-picture mx-auto">
-	        				<!-- <img src="assets/images/avatar.jpg" alt="An image of Nathaniel Samuel" class="rounded-circle" width="100%" height="100%" loading="lazy"> -->
-	        				<img src="assets/images/profile-img-1.jpg" alt="An image of Nathaniel Samuel" class="rounded-circle" width="100%" height="100%" loading="lazy">
+	        				<img src="assets/images/avatar.jpg" alt="An image of Nathaniel Samuel" class="rounded-circle" width="100%" height="100%" loading="lazy">
+	        				<!-- <img src="assets/images/profile-img-1.jpg" alt="An image of Nathaniel Samuel" class="rounded-circle" width="100%" height="100%" loading="lazy"> -->
 					</div>
 					<!-- End .profile-picture -->
 
@@ -165,7 +179,7 @@
 			     		I take offline businesses and institutions online where they can explore the online market to the fullest.
 			     		<br>
 			     		<br>
-			     		<span class="d-inline-block indent">Get </span> in touch today and let's make that website for your business or institution!
+			     		<span class="d-inline-block indent">Get </span> in touch today and let's make a website for your business or institution!
 			     	</p>
 			     </div>
 			     <!-- End .bio -->
@@ -320,7 +334,10 @@
 	<!-- <script src="bootstrap/js/bootstrap.bundle.min.js"></script> -->
 
 	<!-- PHP email form -->
-	<script src="assets/vendor/php-email-form/validate.js"></script>
+	<!-- <script src="assets/vendor/php-email-form/validate.js"></script> -->
+
+	<!-- Email form validation-->
+	<script src="form/validate-form.js"></script>
 
 	<!-- My Script.js -->
 	<script src="assets/javascript/main.js"></script>
