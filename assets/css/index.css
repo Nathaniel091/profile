@@ -1,3 +1,6 @@
+
+
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -55,7 +58,8 @@ header {
 --------------------------------------------------------------*/
 .notification-box{
   position: fixed;
-  top: 50px;
+  /*top will be reset with javascript by adding .animate-notification-box (for animation purposes)*/
+  top: -50px;
   left: 50%; 
   -webkit-transform: translate(-50%, -50%);
      -moz-transform: translate(-50%, -50%);
@@ -66,14 +70,17 @@ header {
   min-width: 250px;
   border: 1px solid black;
   border-radius: 5px;
-  /*background-color: rgba(235, 235, 235, 1);*/
   background-color: rgba(240, 240, 240, 1);
   color: rgba(0, 210, 0, 1);
-  /*font-size: 1.1em;*/
   z-index: 1000 !important;
   
-  -webkit-transition: top 2s;
-  transition: top 2s;
+  -webkit-transition: top 0.2s linear !important;
+  transition: top 0.2s linear !important;
+
+}
+
+.animate-notification-box{
+  top: 50px;
 }
 
 .notification-box > div{
@@ -202,6 +209,11 @@ header {
 
 #page-body .social-links a:hover{
   background: white;
+}
+
+/*from the main.js file*/
+#copy-whatsapp-number:hover{
+  text-decoration: underline; 
 }
 
 #page-body .social-links a > i{

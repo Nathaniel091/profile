@@ -33,23 +33,23 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
 
-
-
-
-
-	<!-- TESTING EMAILJS========================================= -->
-	 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function() {
-            // emailjs.init('user_vkx7EkyTvkokAMcaWTEsG');
-            emailjs.init('ser_vkx7EkyTvkokAMcaWTEsG');
-        })();
-    </script>
-    <script type="text/javascript">
+	<!-- Scripts -->
+	<!-- EmailJS========================================= -->
+	<!-- email js cdn -->
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+	<script type="text/javascript">
+		// init emailJS
+		(function() {
+			// emailjs.init('user_vkx7EkyTvkokAMcaWTEsG');
+			emailjs.init('ser_vkx7EkyTvkokAMcaWTEsG');
+		})();
+	</script>
+	
+	<script type="text/javascript">
 	     window.onload = function() {
 
-			// if(true){
-			if(validateForm()){
+			if(true){
+			// if(validateForm()){
 				// phpEmailFormValidate() is gotten from validate.js in the php-email-form folder
 	            	document.getElementById('contact-form').addEventListener('submit', function(event) {
 			          event.preventDefault();
@@ -76,6 +76,7 @@
 
 		               }, function(error) {
 		                   	console.log('FAILED...', error);
+		                   	console.log('in-built...', error.message);
 
 		                   	// if status is between A % B "say dont worry, not your fault"
 		                   	// online.status >= 200 && online.status < 300;
@@ -103,7 +104,7 @@
 			}
 	     }
 
-    </script>
+	</script>
 
 	<!-- TESTING EMAILJS========================================= -->
 </head>
@@ -250,7 +251,7 @@
 									<!-- message box -->
 									<div class="form-group">
 										<label for="name">Message</label>
-										<textarea class="form-control" name="message" rows="10" data-rule="required" placeholder="Hello..." data-msg="Please write something for us"></textarea>
+										<textarea id="message" class="form-control" name="message" rows="10" data-rule="required" placeholder="Hello..." data-msg="Please write something for us"></textarea>
 										<div class="validate"></div>
 									</div>
 
