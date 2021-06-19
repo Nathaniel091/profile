@@ -1,3 +1,6 @@
+
+
+
 /*--------------------------------------------------------------
 # Global Variables
 --------------------------------------------------------------*/
@@ -16,19 +19,46 @@ const notificationText = document.querySelector('.notification-box .notification
 
 const notification = {
 	timeOut: 5000,
+	// timeOut: 20000,
 	open : function() {
+		// first close all other boxes
+		this.close
+
+		// then a new box
 		notificationBox.classList.remove('d-none');
+
+		// if you call 'this.animate' only, animation effect will be unnoticeable, hence, the use of setTimeout()
+		setTimeout(this.animate, 1);
+		// this.animate
+		// close the box after 'this.timeOut' milliseconds 
 		setTimeout(this.close, this.timeOut);
+		// let id = setTimeout(this.close, this.timeOut);
+		// clear(id)
 	},
 	close : function() {
+		// reset to to '-50px'
+		notificationBox.classList.remove("animate-notification-box");
+
+		// reset box to display none
 		notificationBox.classList.add('d-none');
+
+		// let id = setTimeout(this.close, this.timeOut);
+		// clear(id)
+	},
+	animate: function() {
+		console.log('b4 add ', notificationBox.classList)
+
+		notificationBox.classList.add("animate-notification-box");
+
+		console.log('after add ', notificationBox.classList)
+
 	},
 };
 
+// notificationCloseBtn
 notificationCloseBtn.addEventListener('click', notification.close);
 
-
-// notification.open()
+// notification.open();
 
 
 /*--------------------------------------------------------------
@@ -87,7 +117,6 @@ whatappLink.addEventListener('click', function(event){
 			// setTimeout(notification.close, notification.timeOut);
 		}
 	};
-
 });
 
 
