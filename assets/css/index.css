@@ -306,6 +306,51 @@ header {
   padding-bottom: 8px;
 }
 
+.form-container input {
+  height: 44px;
+}
+
+/*input placeholder*/
+.form-container input::-webkit-input-placeholder{
+  font-size: 13px;
+  opacity: 0.8;
+}
+.form-container input::-moz-placeholder{
+  font-size: 13px;
+  opacity: 0.8;
+}
+.form-container input:-moz-placeholder{
+  font-size: 13px;
+  opacity: 0.8;
+}
+.form-container input::-ms-input-placeholder{
+  font-size: 13px;
+  opacity: 0.8;
+}
+.form-container input:-ms-input-placeholder{
+  font-size: 13px;
+  opacity: 0.8; 
+}
+.form-container input::placeholder {
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+.form-container textarea {
+  padding: 10px 12px;
+}
+
+.form-container input, 
+.form-container textarea {}
+
+/*all label tags added by the jQuery-form-validator*/
+.form-container .form-group input + label,
+.form-container .form-group input + .new-email-error-elem,
+.form-container .form-group textarea + label{
+  color: red;
+  font-size: 13px;
+}
+
 .form-container .validate {
   display: none;
   color: red;
@@ -356,42 +401,7 @@ header {
   animation: animate-loading 1s linear infinite;
 }
 
-.form-container input, 
-.form-container textarea {}
 
-.form-container input {
-  height: 44px;
-}
-
-/*input placeholder*/
-.form-container input::-webkit-input-placeholder{
-  font-size: 0.81em;
-  opacity: 0.8;
-}
-.form-container input::-moz-placeholder{
-  font-size: 0.81em;
-  opacity: 0.8;
-}
-.form-container input:-moz-placeholder{
-  font-size: 0.81em;
-  opacity: 0.8;
-}
-.form-container input::-ms-input-placeholder{
-  font-size: 0.81em;
-  opacity: 0.8;
-}
-.form-container input:-ms-input-placeholder{
-  font-size: 0.81em;
-  opacity: 0.8; 
-}
-.form-container input::placeholder {
-  font-size: 0.81em;
-  opacity: 0.8;
-}
-
-.form-container textarea {
-  padding: 10px 12px;
-}
 
 .form-container button[type="submit"] {
   background: #149ddd;
