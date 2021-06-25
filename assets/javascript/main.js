@@ -22,7 +22,7 @@ const notification = {
 	// timeOut: 20000,
 	open : function() {
 		// first close all other boxes
-		this.close
+		// this.close
 
 		// then a new box
 		notificationBox.classList.remove('d-none');
@@ -46,12 +46,7 @@ const notification = {
 		// clear(id)
 	},
 	animate: function() {
-		console.log('b4 add ', notificationBox.classList)
-
 		notificationBox.classList.add("animate-notification-box");
-
-		console.log('after add ', notificationBox.classList)
-
 	},
 };
 
@@ -145,7 +140,12 @@ const formContainer = document.querySelector("#form-container");
 const formToggleBtn = document.querySelector("#form-toggle-btn");
 formToggleBtn.addEventListener('click', function(event){
 	event.preventDefault();
-	launchSendMessageForm();
+	// launchSendMessageForm();
+
+	// notification - text
+	notificationText.innerHTML = `Hello! <span class="text-dark">The message form is under maintenance and will be ready soon.</span>`;
+
+	notification.open();
 });
 
 const formCloseBtn = document.querySelector("form #close-btn");
