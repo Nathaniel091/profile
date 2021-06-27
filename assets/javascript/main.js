@@ -70,7 +70,7 @@ whatappLink.addEventListener('click', function(event){
 		<br>
 		<br>
 		<span class="d-inline-block text-white small py-2 px-4 rounded" style="background-color: #657786; cursor: pointer;">
-			<a class="whatsapp" href="https://wa.me/+2347063978973?text=Hello, am Nathaniel Samuel. Welcome to WhatsApp. How may I help you?" target="_blank" style="color: inherit;">Open WhatsApp</a>
+			<a class="whatsapp" href="https://wa.me/+2347063978973?text=Hello, am Nathaniel Samuel. Welcome to my whatsApp inbox." target="_blank" style="color: inherit;">Open WhatsApp</a>
 		</span>
 	`;
 
@@ -123,7 +123,7 @@ websiteLink.addEventListener('click', function(event){
 	event.preventDefault();
 
 	// notification - text
-	notificationText.innerHTML = `Coming soon! <span class="text-dark">Website still under construction.</span>`;
+	notificationText.innerHTML = `Coming soon! <span class="text-dark">Official website still under construction.</span>`;
 
 	notification.open();
 
@@ -143,7 +143,10 @@ formToggleBtn.addEventListener('click', function(event){
 	// launchSendMessageForm();
 
 	// notification - text
-	notificationText.innerHTML = `Hello! <span class="text-dark">The message form is under maintenance and will be ready soon.</span>`;
+	
+	notificationText.innerHTML = `Hello! <span class="text-dark">The message form is under maintenance and will be ready soon. 
+		<br>
+		You can contact me via my social media handles or use the email below.</span>`;
 
 	notification.open();
 });

@@ -1,6 +1,15 @@
 
 
 
+
+
+<!-- 
+	*Add cover image, as a summary of what i do
+	*Copy whatsApp no, not working on IOS
+	*Copied alert acting wierd
+ -->
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,19 +41,6 @@
 	<!-- google fonts -->
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
-
-	<!-- Scripts -->
-	<!-- EmailJS========================================= -->
-	<!-- email js cdn -->
-	<!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script> -->
-	<script type="text/javascript">
-		// // init emailJS
-		// (function() {
-		// 	// emailjs.init('user_vkx7EkyTvkokAMcaWTEsG');
-		// 	emailjs.init('ser_vkx7EkyTvkokAMcaWTEsG');
-		// })();
-	</script>
-	
 </head>
 
 <body id="" class="">
@@ -69,6 +65,7 @@
 		<!-- banner -->
 		<section id="banner" class="banner section">
 			<div class="container-fluid d-flex justify-content-between">
+	        		<!-- <img src="" alt="An image of Nathaniel Samuel" class="rounded-circle" width="100%" height="100%" loading="lazy"> -->
 				<div class="logo text-white">
 					<h4>Nathaniel Samuel</h4>
 					<p class="">I Deign | I Build</p>
@@ -90,8 +87,9 @@
 				<div class="profile">
 					<!-- profile-picture -->
 					<div id="" class="profile-picture mx-auto">
-	        				<img src="assets/images/avatar.jpg" alt="An image of Nathaniel Samuel" class="rounded-circle" width="100%" height="100%" loading="lazy">
-	        				<!-- <img src="assets/images/profile-img-1.jpg" alt="An image of Nathaniel Samuel" class="rounded-circle" width="100%" height="100%" loading="lazy"> -->
+	        				<!-- <img src="" alt="An image of Nathaniel Samuel" class="rounded-circle" width="100%" height="100%" loading="lazy"> -->
+	        				<img src="assets/images/profile-mages/avatar.jpg" alt="An image of Nathaniel Samuel" class="rounded-circle" width="100%" height="100%" loading="lazy">
+	        				<!-- <img src="assets/images/profile-mages/profile-img-1.jpg" alt="An image of Nathaniel Samuel" class="rounded-circle" width="100%" height="100%" loading="lazy"> -->
 					</div>
 					<!-- End .profile-picture -->
 
@@ -100,7 +98,7 @@
 				          <!-- facebook -->
 				          <a class="facebook" href="https://web.facebook.com/profile.php?id=100065028572313" title="meet me on Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
 				          <!-- whatsapp -->
-				          <a class="whatsapp" href="https://wa.me/+2347063978973?text=Hello, am Nathaniel Samuel. Welcome to WhatsApp. How may I help you?" title="meet me on whatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+				          <a class="whatsapp" href="https://wa.me/+2347063978973?text=Hello, am Nathaniel Samuel. Welcome to my whatsApp inbox." title="meet me on whatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
 				          <!-- twitter -->
 				     	<a class="twitter" href="https://twitter.com/samuel_Twtt" title="meet me on Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
 				     	<!-- github -->
@@ -152,7 +150,7 @@
 											<label for="name">Your Name</label>
 											<!-- <input type="text" name="name" class="form-control" id="name" placeholder="how should we address you?" data-rule="minlen:4" data-msg="Please enter at least 4 characters"/> -->
 											<!-- email.js -->
-											<input type="text" name="user_name" class="form-control" id="name" placeholder="how should we address you?"/>
+											<input type="text" name="user_name" class="form-control" id="name" placeholder="how should we address you?" required/>
 											<!-- <div class="validate"></div> -->
 										</div>
 
@@ -161,7 +159,7 @@
 											<label for="name">Your Email</label>
 											<!-- <input type="email" class="form-control" name="email" id="email" placeholder="email@example.com" data-rule="email" data-msg="Please enter a valid email" /> -->
 											<!-- email.js -->
-											<input type="email" class="form-control" name="user_email" id="email" placeholder="example@email.com" />
+											<input type="email" class="form-control" name="user_email" id="email" placeholder="example@email.com"  required/>
 											<!-- <div class="validate"></div> -->
 										</div>
 									</div>
@@ -176,7 +174,7 @@
 									<!-- message box -->
 									<div class="form-group">
 										<label for="name">Message</label>
-										<textarea id="message" class="form-control" name="message" rows="10" data-rule="required" placeholder="Hello..."></textarea>
+										<textarea id="message" class="form-control" name="message" rows="10" data-rule="required" placeholder="Hello..."></textarea required>
 										<!-- <div class="validate"></div> -->
 									</div>
 
@@ -264,12 +262,14 @@
 	<!-- bootstrap minified js -->
 	<!-- <script src="bootstrap/js/bootstrap.bundle.min.js"></script> -->
 
-	<!-- jquery form validation cdn -->
-	<script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+	<!-- ========== form ========== -->
+	<!-- jquery form validation offline -->
+	<script defer src="assets/vendor/jquery-validate-offline/jquery.validate.js"></script>
 	<!-- email js cdn -->
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
-	<!-- script for initializing "jQuery-form-validation plugin" and "emailJS plugin" -->
+	<!-- script for initializing & customizing "jQuery-form-validation plugin" and "emailJS plugin" -->
 	<script type="text/javascript" src="form/initialize-jquery-form-validation-and-emailJS.js"></script>
+	<!-- ========== End of form ========== -->
 
 	<!-- My Script.js -->
 	<script src="assets/javascript/main.js"></script>
