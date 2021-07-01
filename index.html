@@ -50,7 +50,7 @@
 		<!-- notification box -->
 		<div id="notification-box" class="notification-box mt-4 mx-auto d-none">
 			<div class="">
-				<button class="close-btn"><i class="fas fa-times"></i></button>
+				<button class="close-btn"><p>&times;</p></button>
 				<p class="notification-text text-center">notification box!</p>
 			</div>
 		</div>
@@ -131,11 +131,11 @@
 			          	<div id="" class="py-5 px-sm-5 mx-auto">
 							<div id="wrapper"  class="wrapper col-lg-7 mx-auto d-flex align-items-stretch">
 
-								<form id="contact-form" class="contact-form py-5 px-4 mx-auto">
-								<!-- <form action="forms/contact.php" method="post" role="form" id="contact-form" class="php-email-form py-5 px-4 mx-auto"> -->
+								<form id="contact-form" action="" method="post" role="form" class="contact-form py-5 px-4 mx-auto">
 
 									<!-- close button -->
-				          			<button id="close-btn" class="close-btn text-white"><i class="fas fa-times"></i></button>
+				          			<button id="close-btn" class="close-btn text-white"><p>&times;</p></button>
+				          			<!-- <button id="close-btn" class="close-btn text-white"><i class="fas fa-times"></i></button> -->
 
 				          			<!-- Get in touch -->
 				          			<h4 class="mb-4" style="opacity: 0.5;">Get in touch</h4>
@@ -206,7 +206,7 @@
 	<footer id="" class="">
 		<!-- section contact-details -->
 		<section id="contact" class="contact">
-			<svg class="d-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#7C8B98" fill-opacity="1" d="M0,0L48,16C96,32,192,64,288,80C384,96,480,96,576,128C672,160,768,224,864,234.7C960,245,1056,203,1152,192C1248,181,1344,203,1392,213.3L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+			<svg class="d-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(51, 63, 80, 1)" fill-opacity="1" d="M0,0L48,16C96,32,192,64,288,80C384,96,480,96,576,128C672,160,768,224,864,234.7C960,245,1056,203,1152,192C1248,181,1344,203,1392,213.3L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
 
 			<div class="contact-details-wrapper">
 				<div class="container">
@@ -247,14 +247,14 @@
 
 	<!-- Vendor JS scripts -->
 	<!-- jquery -->
-	<!-- local jquery -->
-	<!-- <script src="assets/vendor/bootstrap/jquery/jquery-3.5.1(compressed production).min.js"></script> -->
-	<!-- <script src="assets/vendor/bootstrap/jquery/jquery-3.5.1(uncompressed development).js"></script> -->
+	<!-- offline jquery -->
+	<!-- <script src="assets/vendor/jquery/jquery-3.5.1(compressed production).min.js"></script> -->
+	<script src="assets/vendor/jquery/jquery-3.5.1(uncompressed development).js"></script>
 	<!-- CDN jQuery development   -->
 	<!-- <script src="https://code.jquery.com/jquery-3.5.1.js"  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script> -->
 	<!-- OR -->
 	<!-- CDN jQuery production -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
 	<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> -->
 
 	
@@ -268,10 +268,13 @@
 	<!-- email js cdn -->
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
 	<!-- script for initializing & customizing "jQuery-form-validation plugin" and "emailJS plugin" -->
-	<script type="text/javascript" src="form/initialize-jquery-form-validation-and-emailJS.js"></script>
+	<script type="text/javascript" src="form/initialize-jquery-form-validation-and-emailjs.js"></script>
+	<!-- <script type="text/javascript" src="form/message-test.js"></script> -->
 	<!-- ========== End of form ========== -->
 
 	<!-- My Script.js -->
 	<script src="assets/javascript/main.js"></script>
 </body>
 </html>
+
+
