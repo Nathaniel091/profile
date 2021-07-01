@@ -1,6 +1,8 @@
 
 
 
+
+
 /*--------------------------------------------------------------
 # Global Variables
 --------------------------------------------------------------*/
@@ -139,15 +141,15 @@ const formContainer = document.querySelector("#form-container");
 const formToggleBtn = document.querySelector("#form-toggle-btn");
 formToggleBtn.addEventListener('click', function(event){
 	event.preventDefault();
-	launchSendMessageForm();
+	// launchSendMessageForm();
 
 	// notification - text
 	
-	// notificationText.innerHTML = `Hello! <span class="text-dark">The message form is under maintenance and will be ready soon. 
-	// 	<br>
-	// 	You can contact me via my social media handles or use the email below.</span>`;
+	notificationText.innerHTML = `Hello! <span class="text-dark">The message form is under maintenance and will be ready soon. 
+		<br>
+		You can contact me via my social media handles or use the email below.</span>`;
 
-	// notification.open();
+	notification.open();
 });
 
 const formCloseBtn = document.querySelector("form #close-btn");
