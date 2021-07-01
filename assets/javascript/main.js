@@ -16,10 +16,9 @@ const notificationText = document.querySelector('.notification-box .notification
 /*--------------------------------------------------------------
 # notification-box (open & close)
 --------------------------------------------------------------*/
-
 const notification = {
 	timeOut: 5000,
-	// timeOut: 20000,
+	// timeOut: 60000,
 	open : function() {
 		// first close all other boxes
 		// this.close
@@ -64,12 +63,12 @@ whatappLink.addEventListener('click', function(event){
 	event.preventDefault();
 
 	notificationText.innerHTML = `
-		<span id="copy-whatsapp-number" class="d-inline-block text-white small py-2 px-4 rounded" style=" background-color: #657786; cursor: pointer;">
+		<span id="copy-whatsapp-number" class="d-inline-block text-white small py-2 px-4 rounded" style=" background-color: var(--my-secondary-color-lighter); cursor: pointer;">
 			<strong>Copy whatsapp no:</strong> +2347063978973
 		</span>
 		<br>
 		<br>
-		<span class="d-inline-block text-white small py-2 px-4 rounded" style="background-color: #657786; cursor: pointer;">
+		<span class="d-inline-block text-white small py-2 px-4 rounded" style="background-color: var(--my-secondary-color-lighter); cursor: pointer;">
 			<a class="whatsapp" href="https://wa.me/+2347063978973?text=Hello, am Nathaniel Samuel. Welcome to my whatsApp inbox." target="_blank" style="color: inherit;">Open WhatsApp</a>
 		</span>
 	`;
@@ -123,7 +122,7 @@ websiteLink.addEventListener('click', function(event){
 	event.preventDefault();
 
 	// notification - text
-	notificationText.innerHTML = `Coming soon! <span class="text-dark">Official website still under construction.</span>`;
+	notificationText.innerHTML = `Coming soon! <span class="text-dark">Official website will be released soon.</span>`;
 
 	notification.open();
 
@@ -140,15 +139,15 @@ const formContainer = document.querySelector("#form-container");
 const formToggleBtn = document.querySelector("#form-toggle-btn");
 formToggleBtn.addEventListener('click', function(event){
 	event.preventDefault();
-	// launchSendMessageForm();
+	launchSendMessageForm();
 
 	// notification - text
 	
-	notificationText.innerHTML = `Hello! <span class="text-dark">The message form is under maintenance and will be ready soon. 
-		<br>
-		You can contact me via my social media handles or use the email below.</span>`;
+	// notificationText.innerHTML = `Hello! <span class="text-dark">The message form is under maintenance and will be ready soon. 
+	// 	<br>
+	// 	You can contact me via my social media handles or use the email below.</span>`;
 
-	notification.open();
+	// notification.open();
 });
 
 const formCloseBtn = document.querySelector("form #close-btn");
