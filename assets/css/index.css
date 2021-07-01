@@ -134,7 +134,7 @@ header {
 --------------------------------------------------------------*/
 #banner{
   margin-top: 0px;
-  height: 160px;
+  height: 200px;
   /*height: 300px;*/
   /*background-color: #657786;*/
   background-color: var(--my-primary-color);
