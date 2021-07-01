@@ -10,8 +10,10 @@
 }
 
 :root {
-  --my-primary-color: rgba(35, 43, 56, 1);
-  --my-primary-color-lighter: rgba(45, 56, 72, 1);
+  /*--my-primary-color: rgba(35, 43, 56, 1);*/
+  --my-primary-color: rgba(45, 56, 72, 1);
+  /*--my-primary-color-lighter: rgba(45, 56, 72, 1);*/
+  --my-primary-color-lighter: rgba(55, 68, 88, 1);
   --my-primary-color-opacity-2: rgba(35, 43, 56, 0.2);
   --my-primary-color-opacity-9: rgba(35, 43, 56, 0.9);
 
@@ -524,8 +526,8 @@ footer{}
   width: 45px;
   height: 45px;
   /*background: #657786;*/
-  /*background: var(--my-primary-color);*/
-  background: var(--my-primary-color-lighter);
+  background: var(--my-primary-color);
+  /*background: var(--my-primary-color-lighter);*/
   border-radius: 50%;
 }
 
