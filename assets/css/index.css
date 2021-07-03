@@ -290,14 +290,13 @@ header {
   border: none;
   border-radius: 5px;
   /*background: #657786;*/
-  background: var(--my-secondary-color);
+  background: var(--my-secondary-color-lighter);
   color: white;
   box-shadow: rgba(0,0,0,0.5) 0px 0px 5px;
   outline: none;
 }
 
 #page-body .send-button-and-form button:hover{
-  /*background: rgba(101, 119, 134, 0.2);*/
   background: var(--my-primary-color-opacity-2);
   color: black;
   box-shadow: initial;
