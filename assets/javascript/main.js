@@ -124,7 +124,7 @@ websiteLink.addEventListener('click', function(event){
 	event.preventDefault();
 
 	// notification - text
-	notificationText.innerHTML = `Coming soon! <span class="text-dark">Official website will be released soon.</span>`;
+	notificationText.innerHTML = `Coming soon! <span class="text-dark">Official website will be launched soon.</span>`;
 
 	notification.open();
 
