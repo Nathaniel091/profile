@@ -44,7 +44,7 @@ h1, h2, h3, h4, h5, h6 {}
 
 .highlight-first-letter::first-letter{
   /*color: #657786;*/
-  color: var(--my-primary-color);
+  color: var(--my-secondary-color-lighter);
   font-size: 2em;
 } 
 
