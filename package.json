@@ -1,0 +1,26 @@
+{
+  "name": "profile",
+  "version": "1.0.0",
+  "description": "��# profile",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nathaniel091/profile.git"
+  },
+  "keywords": [],
+  "author": "Nathaniel Samuel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nathaniel091/profile/issues"
+  },
+  "homepage": "https://github.com/Nathaniel091/profile#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemailer": "^6.6.3"
+  }
+}
