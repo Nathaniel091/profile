@@ -465,6 +465,10 @@ header {
   border-radius: 4px;
 }
 
+.form-container button[type="submit"]:focus{
+  border: 2px solid #80bdff !important;
+}
+
 .form-container button[type="submit"]:hover {
   background: #37b3ed;
 }

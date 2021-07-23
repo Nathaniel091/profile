@@ -149,7 +149,7 @@
 											<label for="name">Your Name</label>
 											<!-- <input type="text" name="name" class="form-control" id="name" placeholder="how should we address you?" data-rule="minlen:4" data-msg="Please enter at least 4 characters"/> -->
 											<!-- email.js -->
-											<input type="text" name="user_name" class="form-control" id="name" placeholder="how should we address you?" autofocus required/>
+											<input type="text" name="user_name" class="form-control" id="name" placeholder="how should we address you?" required/>
 											<!-- <div class="validate"></div> -->
 										</div>
 
@@ -245,30 +245,29 @@
 
 
 	<!-- Vendor JS scripts -->
-
+	<!-- jquery -->
 	<!-- offline jquery -->
 	<!-- <script src="assets/vendor/jquery/jquery-3.5.1(compressed production).min.js"></script> -->
 	<script src="assets/vendor/jquery/jquery-3.5.1(uncompressed development).js"></script>
-
-	<!-- jQuery CDN development   -->
+	<!-- CDN jQuery development   -->
 	<!-- <script src="https://code.jquery.com/jquery-3.5.1.js"  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script> -->
 	<!-- OR -->
-	<!-- jQuery CDN production -->
+	<!-- CDN jQuery production -->
 	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
 	<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> -->
 
+	
 	<!-- Bootstrap -->
 	<!-- bootstrap minified js -->
 	<!-- <script src="bootstrap/js/bootstrap.bundle.min.js"></script> -->
 
-	<!-- ===> for form -->
-
-	<!-- jquery form validation offline (CDN version not very stable) -->
-	<script src="assets/vendor/jquery-validate-offline/jquery.validate.js"></script>
-
-	<!-- script for initializing & customizing "jQuery-form-validation plugin" and "submiting form" -->
-	<script type="text/javascript" src="/form/validate-and-submit-form.js"></script>
-	<!-- ===> End of form -->
+	<!-- ========== form ========== -->
+	<!-- jquery form validation offline -->
+	<script defer src="assets/vendor/jquery-validate-offline/jquery.validate.js"></script>
+	<!-- for initializing & customizing "jQuery-form-validation plugin" & "form submission" -->
+	<!-- <script type="text/javascript" src="/form/initialize-jquery-form-validation-and-emailjs.js"></script> -->
+	<!-- <script type="text/javascript" src="public/form/validate-and-submit-form.js"></script> -->
+	<script src="form/validate-and-submit-form.js"></script>
 
 	<!-- My Script.js -->
 	<script src="assets/javascript/main.js"></script>

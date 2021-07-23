@@ -56,7 +56,6 @@ notificationCloseBtn.addEventListener('click', notification.close);
 
 // notification.open();
 
-
 /*--------------------------------------------------------------
 # on click whatappLink
 --------------------------------------------------------------*/
@@ -137,36 +136,44 @@ websiteLink.addEventListener('click', function(event){
 #  Form: on click send message button
 --------------------------------------------------------------*/
 const formContainer = document.querySelector("#form-container");
-
 const formToggleBtn = document.querySelector("#form-toggle-btn");
+
+// onclick, launch the form
 formToggleBtn.addEventListener('click', function(event){
 	event.preventDefault();
-	// launchSendMessageForm();
+	launchSendMessageForm();
 
 	// notification - text
 	
-	notificationText.innerHTML = `Hello! <span class="text-dark">The message form is under maintenance and will be ready soon. 
-		<br>
-		You can contact me via my social media handles or use the email below.</span>`;
-
-	notification.open();
+	// notificationText.innerHTML = `Hello! <span class="text-dark">The message form is under maintenance and will be ready soon. 
+	// 	<br>
+	// 	You can contact me via my social media handles or use the email below.</span>`;
+	// notification.open();
 });
 
+// function 'launchSendMessageForm'
+function launchSendMessageForm() {
+	formContainer.classList.remove('d-none');
+
+	// focus on the cursor on the name input-element
+    	let nameElement = document.querySelector("form #name");
+    	nameElement.focus();
+}
+
+// onlick, close the form
 const formCloseBtn = document.querySelector("form #close-btn");
 formCloseBtn.addEventListener('click', function(event){
 	event.preventDefault();
 	closeSendMessageForm();
 });
 
-// function 'launchSendMessageForm'
-function launchSendMessageForm() {
-	formContainer.classList.remove('d-none');
-}
-
 // function 'closeSendMessageForm'
 function closeSendMessageForm() {
 	formContainer.classList.add('d-none');
 }
+
+
+
 
 
 
