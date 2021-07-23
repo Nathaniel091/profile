@@ -65,7 +65,7 @@ whatappLink.addEventListener('click', function(event){
 
 	notificationText.innerHTML = `
 		<span id="copy-whatsapp-number" class="d-inline-block text-white small py-2 px-4 rounded" style=" background-color: var(--my-secondary-color-lighter); cursor: pointer;">
-			<strong>Copy whatsapp no:</strong> +2347063978973
+			<strong>copy no:</strong> +2347063978973
 		</span>
 		<br>
 		<br>
