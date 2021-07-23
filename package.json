@@ -13,7 +13,7 @@
     "url": "git+https://github.com/Nathaniel091/profile.git"
   },
   "keywords": [],
-  "author": "Nathaniel Samuel",
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Nathaniel091/profile/issues"
@@ -25,7 +25,3 @@
     "nodemailer": "^6.6.3"
   }
 }
-
-
-
-
