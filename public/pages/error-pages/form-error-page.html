@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- favicon -->
+	<link href="/assets/images/favicons/favicon.png" rel="icon">
+	<link href="/assets/images/favicons/apple-touch-icon.png" rel="icon">
+
+	<!-- page title -->
+	<title>form error!</title>
+
+	<!-- vendor css file -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+	<style>
+		.error-details{
+			max-width: 650px;
+			/*width: 200px;*/
+			margin: auto !important;
+		}
+
+		.button-container > button {
+			border: none;	
+			width: 200px;
+			height: 50px;
+		}
+		:root {
+  			--main-bg-color: green;
+		}
+		.button-container > button:hover{
+			transform: translateY(-0.1em);
+		}
+
+		.button-container > button:active{
+			/*border-color: white !important;*/
+		}
+
+		@media (max-width: 400px) {
+			.error-details{
+			}
+		}
+	</style>
+</head>
+
+<body class="px-4">
+	<section id="" class="my-5">
+		
+		<div class="mt-5">
+			<!-- all form error details will go here (gotten from server.js) -->
+			<ul class="error-details mx-auto">
+				<p id="" class="text-center"><strong><u> AN ERROR OCCURRED! </u></strong></p>
+				<!-- <p id="" class="text-center"><strong><u>An error occured!</u></strong></p> -->
+				
+				<% for (let prop in errorDetails) { %>
+					<li>
+						<strong><em>---> <%= prop %>:</em></strong>
+						<small><%= errorDetails[prop] %></small>
+					</li>
+					<br>
+				<% } %>
+			</ul>
+		</div>
+
+		<div class="">
+			<img class="d-block mx-auto" src="/assets/images/error-images/form-error-image.png" alt="error image" width="400px" height="300px">
+		</div>
+
+		<div id="" class="button-container mt-5">
+			<!-- <button id="report-error" class="d-block mx-auto bg-danger text-white rounded" type="">Report error</button> -->
+		</div>
+
+	</section>
+
+
+
+
+
+	<!-- Scripts -->
+	<!-- jsPDF library -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+	<!-- <script>
+		let reportBtn = document.querySelector('.button-container #report-error');
+		// reportBtn.innerHTML = "Please wait..."
+
+		reportBtn.addEventListener('click', convertToPDF);
+		function convertToPDF() {
+			
+			let pdf = new jsPDF('p', 'pt', 'letter');
+
+			// source can be HTML-formatted string, or a reference
+			// to an actual DOM element from which the text will be scraped.
+			let source = document.querySelector('.error-details');
+
+			// we support special element handlers. Register them with jQuery-style 
+			// ID selector for either ID or node name. ("#iAmID", "div", "span" etc.)
+			// There is no support for any other type of selectors 
+			// (class, of compound) at this time.
+			let specialElementHandlers = {
+				// ignore element with id of "bypass" - jQuery style selector
+				'#bypassme': function (element, renderer) {
+					// true = "handled elsewhere, bypass text extraction"
+					return true;
+				}
+			};
+
+			let margins = {
+				top: 80,
+				bottom: 60,
+				left: 40,
+				width: 522
+			};
+
+			// all coords and widths are in jsPDF instance's declared units
+			// 'inches' in this case
+			pdf.fromHTML(
+				source, // HTML string or DOM elem ref.
+				margins.left, // x coord
+				margins.top, { // y coord
+					'width': margins.width, // max width of content on PDF
+					'elementHandlers': specialElementHandlers
+			}, function (dispose) {
+				// dispose: object with X, Y of the last line add to the PDF 
+				// this allow the insertion of new lines after html
+
+				// pdf.save('Test.pdf');
+				// pdf.output("dataurlnewwindow");
+				// pdf.output("dataurl");
+
+				let dataurl = pdf.output("dataurl");
+				// let dataurl = pdf.output("dataurlnewwindow");
+				// console.log(dataurl)
+
+				// send formData to back-end
+				const xhr = new XMLHttpRequest();
+				xhr.open('POST', '/');
+				xhr.setRequestHeader('content-type', 'application/pdf');
+				xhr.onload = function() {
+
+					// reset sendBtn text-content back to 'Send';
+					// sendBtn.innerHTML = "Send";
+
+					if(xhr.responseText == 'success') {
+						// 'notificationText' & 'notification.open()' is being accessed from main.js
+						notificationText.innerHTML = `Email Sent ✔. Thank You!`;
+						notification.open();
+
+						name.value = '';
+						email.value = '';
+						message.value = '';
+					} else {}
+				}
+				// xhr.send(JSON.stringify(dataurl));
+				xhr.send(dataurl);
+			});
+		}
+	</script> -->
+</body>
+</html>
+
+
+

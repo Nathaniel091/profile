@@ -308,6 +308,10 @@ header {
   color: transparent;
 }
 
+#page-body .send-button-and-form button:focus{
+  border: 2px solid black ;
+}
+
 /*form*/
 .form-container {
   width: 100%;

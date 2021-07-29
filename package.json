@@ -8,7 +8,7 @@
     "dev": "nodemon server.js",
     "start": "node server.js"
   },
-   "engines": {
+  "engines": {
     "node": "12.x"
   },
   "repository": {
@@ -24,6 +24,7 @@
   "homepage": "https://github.com/Nathaniel091/profile#readme",
   "dependencies": {
     "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
     "express": "^4.17.1",
     "nodemailer": "^6.6.3"
   }

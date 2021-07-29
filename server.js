@@ -4,29 +4,36 @@
 // Change the from 'name' to 'Nathaniel Samuel'
 // add svg error image on the error page
 
-
-
+// ====================================================================
+// from node.js
 const express = require("express");
 const app = express();
 
+// from npm
+// nodemailer
 const nodemailer = require('nodemailer');
+// dotenv
 const dotenv = require('dotenv');
 dotenv.config();
+// ejs
+const ejs = require('ejs');
+app.engine('html', ejs.renderFile);
+// ====================================================================
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, ()=>{
-	console.log(`==> Server running on port ${PORT}`)
-});
+app.listen(PORT, ()=>{console.log(`==> Node.js app running on port ${PORT}`)});
 
-//Middleware
+// ========== Middleware
 app.use(express.static('public'));
 app.use(express.json());
+// ========== End middleware
 
 app.get('/', (req, res)=>{
 	res.sendFile(__dirname + '/public/index.html')
 }); 
 
+// handle post request to homepage
 app.post('/', (req, res)=>{
 	// console.log("req.body => ", req.body);
 
@@ -67,7 +74,7 @@ app.post('/', (req, res)=>{
 		};
 
 		transporter.sendMail(mailOptions, transporterErrorHandlerForNormalEmail);
-	}
+	};
 
 
 	function transporterErrorHandlerForNormalEmail(error, info) {
@@ -75,30 +82,30 @@ app.post('/', (req, res)=>{
 		
 		if(error) {
 			res.send('error');
+
 			console.log("==> nodemailer error => ", error)
 
-			// writing to the error page
-			app.get('/public/error-page.html', function(req, res) {
-				res.send(`========== AN ERROR OCCURRED! ==========
-					<br>
-					-----> error: ${error}
-					<br> -----> code: ${error.code}
-					<br> -----> command: ${error.command}
-					<br>
-					<br>
-					<br> 
-					-----> Don't worry. It's not your fault.`);
+			app.get('/public/pages/error-pages/form-error-page.html', function(req, res) {
+
+				let filepath = '/public/pages/error-pages/form-error-page.html';
+
+				res.sendFile(__dirname + filepath);
+     
+      			let errorDetails = error;
+      			errorDetails.help = "Don't worry, it's not your fault.";
+
+      			res.render(__dirname + filepath, {errorDetails: errorDetails});
 			});
+
 		}else {
 			res.send('success');
 
 			console.log('==> Email was sent! ✔. info.response here ==>: ' + info.response);
 			console.log('==> Starting auto-response ... ' );
 
-			
 			autoResponse();
 		};
-	}
+	};
 
 
 	function autoResponse() {
@@ -120,7 +127,7 @@ app.post('/', (req, res)=>{
 		};
 
 		transporter.sendMail(autoResponseMailOptions, transporterErrorHandlerForAutoresponseEmail);
-	}
+	};
 
 
 	function transporterErrorHandlerForAutoresponseEmail(error, info) {
@@ -132,6 +139,8 @@ app.post('/', (req, res)=>{
 		};
 	};
 });
+
+
 
 
 

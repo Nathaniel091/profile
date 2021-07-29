@@ -95,9 +95,11 @@ const collectAndSendFormData = ()=> {
 		} else {
 
 			countdown(3);
+
 			function countdown(num) {
 				let decreaseInterval = setInterval(decrease, 1000);
 				function decrease() {
+					
 					notificationText.innerHTML = `<span id="email-error-text" class="text-danger">An error occured <i class="fas fa-exclamation-triangle"></i></span>
 					<br>
 					<span class="text-dark" style="color: rgba(0, 210, 0, 1);">opening in</span>  ${num}s`;
@@ -106,12 +108,12 @@ const collectAndSendFormData = ()=> {
 
 					if(num < -1) {
 						clearInterval(decreaseInterval);
-						window.open('/public/error-page.html', '_blank');
+						
+						window.open('/public/pages/error-pages/form-error-page.html', '_blank');
 					}
 
 					notification.open();
 				};
-
 			}
 		}
 	}
