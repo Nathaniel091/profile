@@ -494,8 +494,8 @@ footer{}
 
 .footer .contact .contact-details > div{}
 
-.footer .contact .contact-details .phone span,
-.footer .contact .contact-details .e-mail span{
+.footer .contact .contact-details .phone > span,
+.footer .contact .contact-details .e-mail > span{
   width: 45px;
   height: 45px;
   /*background: #657786;*/
@@ -508,6 +508,11 @@ footer{}
 .footer .contact .contact-details .e-mail span i{
   font-size: 1.2em;
   margin: auto;
+}
+
+.footer .contact .contact-details .phone p > .phone-no,
+.footer .contact .contact-details .e-mail p > .email-address{
+  font-size: 0.9em;
 }
 
 .footer .foot-note{
