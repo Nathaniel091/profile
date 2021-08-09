@@ -83,7 +83,7 @@ app.post('/', (req, res)=>{
 		if(error) {
 			res.send('error');
 
-			console.log("==> nodemailer error => ", error)
+			console.log("==> nodemailer error => ", error);
 
 			app.get('/public/pages/error-pages/form-error-page.html', function(req, res) {
 

@@ -65,7 +65,7 @@ whatappLink.addEventListener('click', function(event){
 
 	notificationText.innerHTML = `
 		<span id="copy-whatsapp-number" class="d-inline-block text-white small py-2 px-4 rounded" style=" background-color: var(--my-secondary-color-lighter); cursor: pointer;">
-			<strong>copy no:</strong> +2347063978973
+			<strong>Copy no:</strong> +2347063978973
 		</span>
 		<br>
 		<br>
@@ -90,8 +90,6 @@ whatappLink.addEventListener('click', function(event){
 
 		copy('+2347063978973')
 		function copy(text) {
-			// close previous box
-			// notification.close();
 
 			input.value = text;
 			input.focus();
@@ -99,17 +97,8 @@ whatappLink.addEventListener('click', function(event){
 			document.execCommand('copy');
 			input.parentNode.removeChild(input);
 
-
 			// // notification - text
 			notificationText.innerHTML = `copied`;
-
-			// open again after 4milisecs
-			// notification.timeOut = 400;
-			// setTimeout(notification.open, notification.timeOut);
-
-			// close after 3s
-			// notification.timeOut = 3000;
-			// setTimeout(notification.close, notification.timeOut);
 		}
 	};
 });

@@ -25,8 +25,7 @@
 # General Styling
 --------------------------------------------------------------*/
 body {
-
-  /*font-family: Segoe UI', sans-serif;*/
+  font-family: 'Segoe UI', sans-serif;
 }
 
 a {}
@@ -65,10 +64,8 @@ h1, h2, h3, h4, h5, h6 {}
 /*--------------------------------------------------------------
  Header
 --------------------------------------------------------------*/
-header {
-  /*position: relative;*/
-  /*z-index: -1;*/
-}
+header {}
+
 /*--------------------------------------------------------------
 # notification-box
 --------------------------------------------------------------*/
@@ -76,17 +73,18 @@ header {
   position: fixed;
   /*top will be reset with javascript by adding .animate-notification-box (for animation purposes)*/
   top: -50px;
-  left: 50%; 
-  -webkit-transform: translate(-50%, -50%);
-     -moz-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-       -o-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  left: 50%;
+  -webkit-transform: translate(-50%, -40%);
+     -moz-transform: translate(-50%, -40%);
+      -ms-transform: translate(-50%, -40%);
+       -o-transform: translate(-50%, -40%);
+          transform: translate(-50%, -40%);
 
   min-width: 250px;
   border: 1px solid black;
   border-radius: 5px;
-  background-color: rgba(240, 240, 240, 1);
+  background-color: rgba(235, 235, 235, 1);
+
   color: rgba(0, 210, 0, 1);
   z-index: 1000 !important;
   
@@ -108,13 +106,20 @@ header {
   position: absolute;
   top: -15px;
   right: -15px;
-  width: 35px;
-  height:  35px;
+  width: 40px;
+  height:  40px;
   font-size: 35px;
-  margin-top: -6px;
-  /*background-color: #7c8b98;*/
-  background-color: var(--my-primary-color);
-  color: white;
+  margin-top: -4px;
+  padding-top: 3px;
+  /*background-color: var(--my-primary-color);*/
+  /*background-color: #485870;*/
+  /*color: white;*/
+
+  color: rgba(240, 240, 240, 1);
+  /*color: black;*/
+  color: #485870;
+
+
   border-radius: 50%;
   border: 1px solid black;
   outline: none;
@@ -138,35 +143,8 @@ header {
   height: 200px;
   /*height: 300px;*/
   /*background-color: #657786;*/
-  background-color: var(--my-primary-color);
   background-color: var(--my-secondary-color);
-
-  /*background-image: url("../images/cover-images/cover-image-10.jpg");*/
-  /*background-repeat: no-repeat;*/
-  /*background-attachment: fixed;*/
-  /*background-position: center;*/
-  /*-webkit-background-size: cover;*/
-  /*-moz-background-size: cover;*/
-  /*-o-background-size: cover;*/
-  /*background-size: cover;*/
-
-  /*background-image: url("../images/cover-images/cover-image-10.jpg");*/
-  /*background-repeat: no-repeat;*/
-  /*background-size: 100% 295px;*/
 }
-
-/*#banner:before {
-  content: "HELLO";
-  background: rgba(5, 13, 24, 0.3);
-
-  background: rgba(0, 0, 0, 0.3);  
-
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: inherit;
-}*/
 
 #banner .container-fluid{}
 
@@ -177,7 +155,7 @@ header {
 
 #banner .nav-toggle-cont .nav-toggle-icon {
   width: 60px;
-  height: 25px;"
+  height: 25px;
 }
 
 @media (max-width: 767px) {
@@ -195,6 +173,10 @@ header {
 }
 
 @media (max-width: 400px) {
+  #banner {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
   #banner .container-fluid{
     height: 180px;
   }
@@ -221,32 +203,28 @@ header {
 /*--------------------------------------------------------------
 # page-body
 --------------------------------------------------------------*/
-#page-body > div{
+.page-body > div{
   width: 70%;
 }
 
-/*profile*/
-/*#page-body .profile .profile-picture{*/
-  /*z-index: 1000 !important;*/
-/*}*/
-
-#page-body .profile .profile-picture{
+.page-body .profile .profile-picture{
   /*background-color: #7C8B98;*/
   background-color: var(--my-secondary-color-lighter);
   width: 216px;
   height: 216px;
   padding: 6px;
   border-radius: 50%;
-  box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 10px;
-  margin-top: -200px;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 5px;
+  /* margin-top: -200px; */
+  margin-top: -180px;
 }
 
-#page-body .profile .social-links{
+.page-body .profile .social-links{
   margin-top: 50px;
   max-width: 400px;
 }
 
-#page-body .social-links a{
+.page-body .social-links a{
   display: inline-flex;
   width: 50px;
   height: 50px;
@@ -259,7 +237,7 @@ header {
   border: 1px solid #657786;
 }
 
-#page-body .social-links a:hover{
+.page-body .social-links a:hover{
   background: white;
 }
 
@@ -268,23 +246,23 @@ header {
   text-decoration: underline; 
 }
 
-#page-body .social-links a > i{
+.page-body .social-links a > i{
   font-size: 1.4em;
   font-weight: bold;
   margin: auto;
 }
 
 /*bio*/
-#page-body .bio{
+.page-body .bio{
   margin-top: 40px;
 }
 
 /*send-button-and-form*/
-#page-body .send-button-and-form{
+.page-body .send-button-and-form{
   margin-top: 50px;
 }
 
-#page-body .send-button-and-form button{
+.page-body .send-button-and-form button{
   width: 170px;
   height: 50px;
   border: none;
@@ -296,20 +274,20 @@ header {
   outline: none;
 }
 
-#page-body .send-button-and-form button:hover{
+.page-body .send-button-and-form button:hover{
   background: var(--my-primary-color-opacity-2);
   color: black;
   box-shadow: initial;
   border: 1px solid black;
 }
 
-#page-body .send-button-and-form button:active{
+.page-body .send-button-and-form button:active{
   /*blinking effect*/
   color: transparent;
 }
 
-#page-body .send-button-and-form button:focus{
-  border: 2px solid black ;
+.page-body .send-button-and-form button:focus{
+  border: 2px solid black;
 }
 
 /*form*/
@@ -336,14 +314,14 @@ header {
 
 .form-container > div form{
   position: relative;
-  background: white;
+ background: white;
   border-radius: 10px;
 }
 
 .form-container > div form #close-btn{
   position: absolute;
   top: -25px;
-  right: -25px;
+  right: -15px;
   width: 50px;
   height:  50px;
   font-size: 42px;
@@ -363,9 +341,6 @@ header {
   padding-bottom: 8px;
 }
 
-.form-container input {
-  height: 44px;
-}
 
 /*input placeholder*/
 .form-container input::-webkit-input-placeholder{
@@ -458,10 +433,7 @@ header {
   animation: animate-loading 1s linear infinite;
 }
 
-
-
 .form-container button[type="submit"] {
-  background: #149ddd;
   border: 0;
   padding: 10px 24px;
   color: #fff;
@@ -471,10 +443,6 @@ header {
 
 .form-container button[type="submit"]:focus{
   border: 2px solid #80bdff !important;
-}
-
-.form-container button[type="submit"]:hover {
-  background: #37b3ed;
 }
 
 @-webkit-keyframes animate-loading {
@@ -509,15 +477,13 @@ footer{}
 /*--------------------------------------------------------------
 # contact-details
 --------------------------------------------------------------*/
-#contact{
+.footer .contact{
   padding-top: 0;
   padding-left: 0;
   padding-right: 0;
 }
 
-#contact svg{}
-
-#contact .contact-details-wrapper{
+.footer .contact .contact-details-wrapper{
   /*background: #7C8B98;*/
   background: var(--my-secondary-color);
   padding-bottom: 150px;
@@ -526,10 +492,10 @@ footer{}
   margin-top: -2px;
 }
 
-#contact .contact-details > div{}
+.footer .contact .contact-details > div{}
 
-#contact .contact-details .phone span,
-#contact .contact-details .e-mail span{
+.footer .contact .contact-details .phone span,
+.footer .contact .contact-details .e-mail span{
   width: 45px;
   height: 45px;
   /*background: #657786;*/
@@ -538,29 +504,29 @@ footer{}
   border-radius: 50%;
 }
 
-#contact .contact-details .phone span i,
-#contact .contact-details .e-mail span i{
+.footer .contact .contact-details .phone span i,
+.footer .contact .contact-details .e-mail span i{
   font-size: 1.2em;
   margin: auto;
 }
 
-.foot-note{
+.footer .foot-note{
   /*background: #657786;*/
   background: var(--my-primary-color);
 }
 
-.foot-note .copyright{
+.footer .foot-note .copyright{
   color: white;
   height: 50px;
   padding-top: 15px;
 }
-.foot-note p{
+.footer .foot-note p{
   font-size: 0.8em;
 }
-.foot-note p a{
+.footer .foot-note p a{
   text-decoration: underline;
 }
-.foot-note p a:hover{
+.footer .foot-note p a:hover{
   text-decoration: none;
 }
 
