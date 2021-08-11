@@ -26,6 +26,7 @@
 --------------------------------------------------------------*/
 body {
   font-family: 'Segoe UI', sans-serif;
+  /* font-size: 93.75%; */
 }
 
 a {}
@@ -320,7 +321,7 @@ header {}
 
 .form-container > div form{
   position: relative;
- background: white;
+  background: white;
   border-radius: 10px;
 }
 
@@ -330,7 +331,7 @@ header {}
   right: -15px;
   width: 50px;
   height:  50px;
-  font-size: 42px;
+  font-size: 50px;
 
   border-radius: 50%;
   border: 1px solid white !important;
@@ -341,7 +342,7 @@ header {}
   background: var(--my-secondary-color-lighter);
 }
 .form-container > div form #close-btn > p{
-  margin-top: -11px;
+  margin-top: -18px;
 }
 .form-container .form-group {
   padding-bottom: 8px;
@@ -474,13 +475,11 @@ header {}
     width: initial;
   }
   
-}
-
-@media (max-width: 900px) {
   #page-body .profile .social-links{
     margin-top: 70px;
   }
 }
+
 
 /*--------------------------------------------------------------
  Footer
