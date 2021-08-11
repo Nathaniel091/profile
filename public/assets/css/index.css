@@ -111,14 +111,15 @@ header {}
   font-size: 35px;
   margin-top: -4px;
   padding-top: 3px;
-  /*background-color: var(--my-primary-color);*/
-  /*background-color: #485870;*/
 
   /* color: rgba(240, 240, 240, 1); */
   /*color: black;*/
   color: #485870;
 
-
+  /*background-color: var(--my-primary-color);*/
+  /* background-color: #485870; */
+  background-color: white;
+  
   border-radius: 50%;
   border: 1px solid black;
   outline: none;
