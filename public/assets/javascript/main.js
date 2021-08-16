@@ -19,7 +19,7 @@ const notificationText = document.querySelector('.notification-box .notification
 # notification-box (open & close)
 --------------------------------------------------------------*/
 const notification = {
-	timeOut: 5000,
+	timeOut: 6000,
 	open : function() {
 		notificationBox.classList.remove('d-none');
 
