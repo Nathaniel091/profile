@@ -115,11 +115,6 @@
 </head>
 
 <body id="" class="">
-	<section>
-		<div><button id="copyTest" class="btn btn-primary w-25">Copy test</button></div>
-	</section>
-
-
 	<!-- header -->
 	<header id="" class="">
 		<!-- notification box -->
@@ -377,54 +372,53 @@
 	</script> -->
 	
 	
-	<!-- TEST 1  -->
+	<!-- TEST 2  -->
 	<script>
 
-		let copyTest = document.getElementById("copyTest");
-		copyTest.addEventListener("click", copyToClipboard);
+		// let copyTest = document.getElementById("copyTest");
+		// copyTest.addEventListener("click", copyToClipboard);
 
-		function copyToClipboard() {
-			let textToCopy = "copy copy copy";
-			var textArea;
+		// function copyToClipboard() {
+		// 	let textToCopy = "copy copy copy";
+		// 	let textArea;
+			
+		// 	function isIOS() {
+		// 		//can use a better detection logic here
+		// 		return navigator.userAgent.match(/ipad|iphone/i);
+		// 	}
 
-			function createTextArea(text) {
-				textArea = document.createElement('textArea');
-				textArea.readOnly = true;
-				// textArea.readOnly = false;
-				textArea.contentEditable = true;
-				textArea.value = text;
-				document.body.appendChild(textArea);
-			}
+		// 	function createTextArea(text) {
+		// 		textArea = document.createElement('textArea');
+		// 		textArea.readOnly = true;
+		// 		textArea.contentEditable = true;
+		// 		textArea.value = text;
+		// 		document.body.appendChild(textArea);
+		// 	}
 
-			function isOS() {
-				//can use a better detection logic here
-				return navigator.userAgent.match(/ipad|iphone/i);
-			}
-
-			function selectText() {
-				var range, selection;
+		// 	function selectText() {
+		// 		var range, selection;
 				
-				if (isOS()) {
-					range = document.createRange();
-					range.selectNodeContents(textArea);
-					selection = window.getSelection();
-					selection.removeAllRanges();
-					selection.addRange(range);
-					textArea.setSelectionRange(0, 999999);
-				} else {
-					textArea.select();
-				}
-			}
+		// 		if (isIOS()) {
+		// 			range = document.createRange();
+		// 			range.selectNodeContents(textArea);
+		// 			selection = window.getSelection();
+		// 			selection.removeAllRanges();
+		// 			selection.addRange(range);
+		// 			textArea.setSelectionRange(0, 999999);
+		// 		} else {
+		// 			textArea.select();
+		// 		}
+		// 	}
 
-			function copy() {
-				document.execCommand('copy');
-				document.body.removeChild(textArea);
-			}
+		// 	function copy() {
+		// 		document.execCommand('copy');
+		// 		document.body.removeChild(textArea);
+		// 	}
 
-			createTextArea(textToCopy);
-			selectText();
-			copy();
-		}
+		// 	createTextArea(textToCopy);
+		// 	selectText();
+		// 	copy();
+		// }
 	</script>
 	
 

@@ -82,28 +82,76 @@ whatappLink.addEventListener('click', function(event){
 
 	// onclick #copy-whatsapp-number, copy whatsapp number
 	let copyWhatsappNumber = document.querySelector("#copy-whatsapp-number")
-	copyWhatsappNumber.addEventListener('click', copyToClipboard);
-	
-	
-	function copyToClipboard(){
-		let input = this.appendChild(document.createElement("input"));
+	copyWhatsappNumber.addEventListener('click', function() {
+		copyToClipboard("it worked on IOS. Mad Twale!")
+	});
 
-		copy('+2347063978973');
+	function copyToClipboard(textToCopy) {
+		// let textToCopy = "copy copy copy";
+		let textArea;
+		
+		function isIOS() {
+			//can use a better detection logic here
+			return navigator.userAgent.match(/ipad|iphone/i);
+		}
 
-		function copy(text) {
+		function createTextArea(text) {
+			textArea = document.createElement('textArea');
+			textArea.readOnly = true;
+			textArea.contentEditable = true;
+			textArea.value = text;
+			document.body.appendChild(textArea);
+		}
 
-			input.value = text;
-			input.focus();
-			input.select();
+		function selectText() {
+			var range, selection;
+			
+			if (isIOS()) {
+				range = document.createRange();
+				range.selectNodeContents(textArea);
+				selection = window.getSelection();
+				selection.removeAllRanges();
+				selection.addRange(range);
+				textArea.setSelectionRange(0, 999999);
+			} else {
+				textArea.select();
+			}
+		}
+
+		function copy() {
 			document.execCommand('copy');
-			input.parentNode.removeChild(input);
+			document.body.removeChild(textArea);
 
 			// notification - text
 			notificationText.innerHTML = `copied`;
+			notification.open();
 		}
-	};
+
+		createTextArea(textToCopy);
+		selectText();
+		copy();
+	}
+	
+
 });
 
+	// function copyToClipboard(){
+	// 	let input = this.appendChild(document.createElement("input"));
+
+	// 	copy('+2347063978973');
+
+	// 	function copy(text) {
+
+	// 		input.value = text;
+	// 		input.focus();
+	// 		input.select();
+	// 		document.execCommand('copy');
+	// 		input.parentNode.removeChild(input);
+
+	// 		// notification - text
+	// 		notificationText.innerHTML = `copied`;
+	// 	}
+	// };
 
 /*--------------------------------------------------------------
 # on click websiteLink
@@ -116,9 +164,6 @@ websiteLink.addEventListener('click', function(event){
 	notificationText.innerHTML = `Coming soon! <span class="text-dark">Official website will be launched soon.</span>`;
 
 	notification.open();
-
-	// notification.timeOut = 10000;
-	// setTimeout(notification.close, notification.timeOut);
 });
 
 
