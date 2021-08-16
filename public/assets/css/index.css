@@ -53,10 +53,10 @@ h1, h2, h3, h4, h5, h6 {}
 }
 
 @media (max-width: 500px) {
-  section{
+  .section{
     margin-top: 50px;
 
-    padding: 40px 30px;
+    padding: 40px 25px;
     padding-bottom: 0px;
   }
 }

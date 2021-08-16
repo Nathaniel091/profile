@@ -88,7 +88,8 @@ whatappLink.addEventListener('click', function(event){
 	function copyToClipboard(){
 		let input = this.appendChild(document.createElement("input"));
 
-		copy('+2347063978973')
+		copy('+2347063978973');
+
 		function copy(text) {
 
 			input.value = text;
@@ -97,7 +98,7 @@ whatappLink.addEventListener('click', function(event){
 			document.execCommand('copy');
 			input.parentNode.removeChild(input);
 
-			// // notification - text
+			// notification - text
 			notificationText.innerHTML = `copied`;
 		}
 	};
