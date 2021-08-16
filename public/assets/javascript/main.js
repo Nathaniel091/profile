@@ -20,21 +20,14 @@ const notificationText = document.querySelector('.notification-box .notification
 --------------------------------------------------------------*/
 const notification = {
 	timeOut: 5000,
-	// timeOut: 60000,
 	open : function() {
-		// first close all other boxes
-		// this.close
-
-		// then a new box
 		notificationBox.classList.remove('d-none');
 
 		// if you call 'this.animate' only, animation effect will be unnoticeable, hence, the use of setTimeout()
 		setTimeout(this.animate, 1);
-		// this.animate
-		// close the box after 'this.timeOut' milliseconds 
+		
+		// close the box after 'this.timeOut' seconds 
 		setTimeout(this.close, this.timeOut);
-		// let id = setTimeout(this.close, this.timeOut);
-		// clear(id)
 	},
 	close : function() {
 		// reset to to '-50px'
@@ -61,6 +54,9 @@ notificationCloseBtn.addEventListener('click', notification.close);
 const whatappLink = document.querySelector(".social-links .whatsapp")
 whatappLink.addEventListener('click', function(event){
 	event.preventDefault();
+	
+	// get whatsapp url from index.html for 'copyNoAndOpenWhatsappBtns'
+	let whatsappUrl = document.querySelector(".whatsapp").getAttribute("href");
 	let copyNoAndOpenWhatsappBtns = `
 		<span id="copy-whatsapp-number" class="d-inline-block text-white small py-2 px-4 rounded" style=" background-color: var(--my-secondary-color-lighter); cursor: pointer;">
 			<strong>Copy no:</strong> +2347063978973
@@ -68,7 +64,7 @@ whatappLink.addEventListener('click', function(event){
 		<br>
 		<br>
 		<span class="d-inline-block text-white small py-2 px-4 rounded" style="background-color: var(--my-secondary-color-lighter); cursor: pointer;">
-			<a class="whatsapp" href="https://wa.me/+2347063978973?text=Hello, am Nathaniel Samuel. Welcome to my whatsApp inbox." target="_blank" style="color: inherit;">Open WhatsApp</a>
+			<a class="whatsapp" href="${whatsappUrl}" target="_blank" style="color: inherit;">Open WhatsApp</a>
 		</span>
 	`;
 	notificationText.innerHTML = copyNoAndOpenWhatsappBtns;
@@ -178,8 +174,8 @@ function launchSendMessageForm() {
 	formContainer.classList.remove('d-none');
 
 	// focus on the cursor on the name input-element
-    	let nameElement = document.querySelector("form #name");
-    	nameElement.focus();
+	// let nameElement = document.querySelector("form #name");
+    // nameElement.focus();
 }
 
 // onlick, close the form
@@ -193,11 +189,5 @@ formCloseBtn.addEventListener('click', function(event){
 function closeSendMessageForm() {
 	formContainer.classList.add('d-none');
 }
-
-
-
-
-
-
 
 
