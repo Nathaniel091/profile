@@ -172,10 +172,6 @@ formToggleBtn.addEventListener('click', function(event){
 // function 'launchSendMessageForm'
 function launchSendMessageForm() {
 	formContainer.classList.remove('d-none');
-
-	// focus on the cursor on the name input-element
-	// let nameElement = document.querySelector("form #name");
-    // nameElement.focus();
 }
 
 // onlick, close the form

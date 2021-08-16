@@ -327,19 +327,24 @@ header {}
 
 .form-container > div form #close-btn{
   position: absolute;
-  top: -25px;
+  top: -45px;
   right: -15px;
   width: 50px;
   height:  50px;
   font-size: 50px;
 
-  border-radius: 50%;
-  border: 1px solid white !important;
+  /* border-radius: 50%; */
+  /* border: 1px solid white !important; */
+
+  box-shadow: initial;
+  border: none;
+  background-color: transparent;
 }
 
 .form-container > div form #close-btn:hover{
   /*background: rgba(0, 0, 0, 0.9);*/
-  background: var(--my-secondary-color-lighter);
+  /* background: var(--my-secondary-color-lighter); */
+  background-color: rgba(255, 255, 255, 0.1);
 }
 .form-container > div form #close-btn > p{
   margin-top: -18px;
