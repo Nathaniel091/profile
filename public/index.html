@@ -327,12 +327,14 @@
 		<!-- End foot-note section-->
 	</footer>
 
-	<script>
+	<!-- TEST 1  -->
+	<!-- <script>
+
 		let copyTest = document.getElementById("copyTest");
-		document.addEventListener("click", copyToClipboard);
+		copyTest.addEventListener("click", copyToClipboard);
 
 		function copyToClipboard() {
-			let textToCopy = "Copy to clipboard is working on IOS";
+			let textToCopy = "copy copy copy";
 			var textArea;
 
 			function isOS() {
@@ -371,6 +373,57 @@
 			createTextArea(textToCopy);
 			selectText();
 			copyTo();
+		}
+	</script> -->
+	
+	
+	<!-- TEST 1  -->
+	<script>
+
+		let copyTest = document.getElementById("copyTest");
+		copyTest.addEventListener("click", copyToClipboard);
+
+		function copyToClipboard() {
+			let textToCopy = "copy copy copy";
+			var textArea;
+
+			function createTextArea(text) {
+				textArea = document.createElement('textArea');
+				textArea.readOnly = true;
+				// textArea.readOnly = false;
+				textArea.contentEditable = true;
+				textArea.value = text;
+				document.body.appendChild(textArea);
+			}
+
+			function isOS() {
+				//can use a better detection logic here
+				return navigator.userAgent.match(/ipad|iphone/i);
+			}
+
+			function selectText() {
+				var range, selection;
+				
+				if (isOS()) {
+					range = document.createRange();
+					range.selectNodeContents(textArea);
+					selection = window.getSelection();
+					selection.removeAllRanges();
+					selection.addRange(range);
+					textArea.setSelectionRange(0, 999999);
+				} else {
+					textArea.select();
+				}
+			}
+
+			function copy() {
+				document.execCommand('copy');
+				document.body.removeChild(textArea);
+			}
+
+			createTextArea(textToCopy);
+			selectText();
+			copy();
 		}
 	</script>
 	
