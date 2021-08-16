@@ -4,13 +4,11 @@
 
 <!-- 
 	* Add cover image, as a summary of what i do
-	* Copy whatsApp no, not working on IOS
-	* Copied alert acting wierd
-	* Delete / compress images
 	* Phone nunber: on click, (1) copy (2) call;
 	* Change email footer to: (1)"From:", (2)"Email:", (3)"Tunnel:" || "website: || "comming from:"
 	* "Report error!" feature
 	* Test my hands on some SEO
+	* put all global functions to a single file and then import them for usage
 	* Done
  -->
 
@@ -291,7 +289,7 @@
 					     	<p class="">
 								<strong>Phone:</strong>
 								<br>
-								<span class="phone-no">+234 706 397 8973</span>
+								<span class="phone-no">+2347063978973</span>
 							</p>
 					     </div>
 
@@ -321,105 +319,6 @@
 		<!-- End contact-details section-->
 		<!-- End foot-note section-->
 	</footer>
-
-	<!-- TEST 1  -->
-	<!-- <script>
-
-		let copyTest = document.getElementById("copyTest");
-		copyTest.addEventListener("click", copyToClipboard);
-
-		function copyToClipboard() {
-			let textToCopy = "copy copy copy";
-			var textArea;
-
-			function isOS() {
-				//can use a better detection logic here
-				return navigator.userAgent.match(/ipad|iphone/i);
-			}
-
-			function createTextArea(text) {
-				textArea = document.createElement('textArea');
-				textArea.readOnly = true;
-				textArea.contentEditable = true;
-				textArea.value = text;
-				document.body.appendChild(textArea);
-			}
-
-			function selectText() {
-				var range, selection;
-
-				if (isOS()) {
-					range = document.createRange();
-					range.selectNodeContents(textArea);
-					selection = window.getSelection();
-					selection.removeAllRanges();
-					selection.addRange(range);
-					textArea.setSelectionRange(0, 999999);
-				} else {
-					textArea.select();
-				}
-			}
-
-			function copyTo() {
-				document.execCommand('copy');
-				document.body.removeChild(textArea);
-			}
-
-			createTextArea(textToCopy);
-			selectText();
-			copyTo();
-		}
-	</script> -->
-	
-	
-	<!-- TEST 2  -->
-	<script>
-
-		// let copyTest = document.getElementById("copyTest");
-		// copyTest.addEventListener("click", copyToClipboard);
-
-		// function copyToClipboard() {
-		// 	let textToCopy = "copy copy copy";
-		// 	let textArea;
-			
-		// 	function isIOS() {
-		// 		//can use a better detection logic here
-		// 		return navigator.userAgent.match(/ipad|iphone/i);
-		// 	}
-
-		// 	function createTextArea(text) {
-		// 		textArea = document.createElement('textArea');
-		// 		textArea.readOnly = true;
-		// 		textArea.contentEditable = true;
-		// 		textArea.value = text;
-		// 		document.body.appendChild(textArea);
-		// 	}
-
-		// 	function selectText() {
-		// 		var range, selection;
-				
-		// 		if (isIOS()) {
-		// 			range = document.createRange();
-		// 			range.selectNodeContents(textArea);
-		// 			selection = window.getSelection();
-		// 			selection.removeAllRanges();
-		// 			selection.addRange(range);
-		// 			textArea.setSelectionRange(0, 999999);
-		// 		} else {
-		// 			textArea.select();
-		// 		}
-		// 	}
-
-		// 	function copy() {
-		// 		document.execCommand('copy');
-		// 		document.body.removeChild(textArea);
-		// 	}
-
-		// 	createTextArea(textToCopy);
-		// 	selectText();
-		// 	copy();
-		// }
-	</script>
 	
 
 

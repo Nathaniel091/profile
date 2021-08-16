@@ -54,7 +54,6 @@ const notification = {
 // notificationCloseBtn
 notificationCloseBtn.addEventListener('click', notification.close);
 
-// notification.open();
 
 /*--------------------------------------------------------------
 # on click whatappLink
@@ -62,8 +61,7 @@ notificationCloseBtn.addEventListener('click', notification.close);
 const whatappLink = document.querySelector(".social-links .whatsapp")
 whatappLink.addEventListener('click', function(event){
 	event.preventDefault();
-
-	notificationText.innerHTML = `
+	let copyNoAndOpenWhatsappBtns = `
 		<span id="copy-whatsapp-number" class="d-inline-block text-white small py-2 px-4 rounded" style=" background-color: var(--my-secondary-color-lighter); cursor: pointer;">
 			<strong>Copy no:</strong> +2347063978973
 		</span>
@@ -73,85 +71,74 @@ whatappLink.addEventListener('click', function(event){
 			<a class="whatsapp" href="https://wa.me/+2347063978973?text=Hello, am Nathaniel Samuel. Welcome to my whatsApp inbox." target="_blank" style="color: inherit;">Open WhatsApp</a>
 		</span>
 	`;
-
+	notificationText.innerHTML = copyNoAndOpenWhatsappBtns;
 	notification.open();
 
-	// setting close time to 10s
-	// notification.timeOut = 10000;
-	setTimeout(notification.close, notification.timeOut);
-
-	// onclick #copy-whatsapp-number, copy whatsapp number
-	let copyWhatsappNumber = document.querySelector("#copy-whatsapp-number")
+	// onclick, copy the whatsapp number
+	let copyWhatsappNumber = document.querySelector("#copy-whatsapp-number");
 	copyWhatsappNumber.addEventListener('click', function() {
-		copyToClipboard("it worked on IOS. Mad Twale!")
+		copyToClipboard("+2347063978973");
 	});
-
-	function copyToClipboard(textToCopy) {
-		// let textToCopy = "copy copy copy";
-		let textArea;
-		
-		function isIOS() {
-			//can use a better detection logic here
-			return navigator.userAgent.match(/ipad|iphone/i);
-		}
-
-		function createTextArea(text) {
-			textArea = document.createElement('textArea');
-			textArea.readOnly = true;
-			textArea.contentEditable = true;
-			textArea.value = text;
-			document.body.appendChild(textArea);
-		}
-
-		function selectText() {
-			var range, selection;
-			
-			if (isIOS()) {
-				range = document.createRange();
-				range.selectNodeContents(textArea);
-				selection = window.getSelection();
-				selection.removeAllRanges();
-				selection.addRange(range);
-				textArea.setSelectionRange(0, 999999);
-			} else {
-				textArea.select();
-			}
-		}
-
-		function copy() {
-			document.execCommand('copy');
-			document.body.removeChild(textArea);
-
-			// notification - text
-			notificationText.innerHTML = `copied`;
-			notification.open();
-		}
-
-		createTextArea(textToCopy);
-		selectText();
-		copy();
-	}
-	
 
 });
 
-	// function copyToClipboard(){
-	// 	let input = this.appendChild(document.createElement("input"));
 
-	// 	copy('+2347063978973');
+/*--------------------------------------------------------------
+# copyToClipboard function
+--------------------------------------------------------------*/
+function copyToClipboard(textToCopy) {
+	let textArea;
+	
+	function isIOS() {
+		//can use a better detection logic here
+		return navigator.userAgent.match(/ipad|iphone/i);
+	}
 
-	// 	function copy(text) {
+	// create text area
+	createTextArea(textToCopy);
 
-	// 		input.value = text;
-	// 		input.focus();
-	// 		input.select();
-	// 		document.execCommand('copy');
-	// 		input.parentNode.removeChild(input);
+	function createTextArea(text) {
+		textArea = document.createElement('textArea');
+		textArea.readOnly = true;
+		textArea.contentEditable = true;
+		textArea.value = text;
+		document.body.appendChild(textArea);
 
-	// 		// notification - text
-	// 		notificationText.innerHTML = `copied`;
-	// 	}
-	// };
+		// select text
+		selectText();
+	}
+
+	function selectText() {
+		let range, selection;
+		
+		if (isIOS()) {
+			range = document.createRange();
+			range.selectNodeContents(textArea);
+			selection = window.getSelection();
+			selection.removeAllRanges();
+			selection.addRange(range);
+			textArea.setSelectionRange(0, 999999);
+
+			// copy
+			copy();		
+		} else {
+			textArea.select();
+
+			// copy
+			copy();			
+		}
+	}
+
+	function copy() {
+		document.execCommand('copy');
+		document.body.removeChild(textArea);
+
+		// notification - text
+		notificationText.innerHTML = `copied`;
+		notification.open();
+	};
+}
+
 
 /*--------------------------------------------------------------
 # on click websiteLink
