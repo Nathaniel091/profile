@@ -86,7 +86,9 @@ header {}
   border-radius: 5px;
   background-color: rgba(235, 235, 235, 1);
 
-  color: rgba(0, 210, 0, 1);
+  color: rgba(0, 180, 0, 1);
+  /* color: #6A9953; */
+
   z-index: 1000 !important;
   
   -webkit-transition: top 0.2s linear !important;
